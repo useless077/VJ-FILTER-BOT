@@ -39,6 +39,7 @@ from database.gfilters_mdb import (
 import logging
 from urllib.parse import quote_plus
 from TechVJ.util.file_properties import get_name, get_hash, get_media_file_size
+from random import choice
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
