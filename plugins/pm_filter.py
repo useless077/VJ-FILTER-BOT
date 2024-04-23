@@ -40,6 +40,7 @@ import logging
 from urllib.parse import quote_plus
 from TechVJ.util.file_properties import get_name, get_hash, get_media_file_size
 from random import choice
+from utils import humanbytes
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
@@ -55,6 +56,10 @@ SPELL_CHECK = {}
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
+    try:
+        await message.react(emoji=random.choice(EMOJIS))
+    except Exception:
+        pass
     if message.chat.id != SUPPORT_CHAT_ID:
         settings = await get_settings(message.chat.id)
         chatid = message.chat.id 
@@ -102,6 +107,10 @@ async def give_filter(client, message):
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pm_text(bot, message):
   #  await message.react(emoji="♥️")
+    try:
+        await message.react(emoji=random.choice(EMOJIS))
+    except Exception:
+        pass
     content = message.text
     user = message.from_user.first_name
     user_id = message.from_user.id
