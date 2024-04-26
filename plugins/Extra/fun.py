@@ -560,3 +560,25 @@ async def runs(_, message):
         await message.reply_to_message.reply_text(effective_stringz)
     else:
         await message.reply_text(effective_stringz)
+
+@Client.on_message(
+    filters.command("dare")
+)
+async def runs(_, message):
+    """ /runs strings """
+    effective_stringy = random.choice(DARE)
+    if message.reply_to_message:
+        await message.reply_to_message.reply_text(effective_stringy)
+    else:
+        await message.reply_text(effective_stringy)
+
+@Client.on_message(
+    filters.command("joke")
+)
+async def runs(_, message):
+    """ /runs strings """
+    effective_stringa = random.choice(JOKE)
+    if message.reply_to_message:
+        await message.reply_to_message.reply_text(effective_stringa)
+    else:
+        await message.reply_text(effective_stringa)
