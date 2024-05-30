@@ -515,6 +515,12 @@ JOKE = (
     "Vaazha maram thaar podum! Aana adha vachhi road poda mudiyuma?", 
     "Tea cupla tea irukum. Appa World Cupla world irukkuma?", 
     "Paalkova paalil irundhu pannalaam, aana rasagullava rasathil irundhu panna mudiyuma?"
+    "திருப்பதிக்கு மொட்டை அடிக்கலாம்னு போனா அங்க ஃபுல்லா ஆம்பளைங்களா மொட்டை அடிச்சு இருந்தாங்க ஏன்? என்னா அது மேல் திருப்பதி"
+    "ஒருத்தனுக்கு செம பசியாம் ஸ்ட்ரைட்டா போயிட்டு மழையில நனைந்த உடனே பசி போயிடுச்சாம் ஏன்? ஏன்னா அது அடை மழையாம்"
+    "எல்லா காயத்துக்கும் மருந்து போட முடியும் ஆனா ஒரே ஒரு காயத்துக்கு மட்டும் மருந்து போட முடியாது அது என்ன காயம்? ஆகாயம்"
+    "என்னதான் ஊரில் வெள்ளம் வந்தாலும் அந்த வெள்ளத்தில் சர்க்கரைப்பொங்கல் பண்ண முடியுமா?!"
+    "ஒருத்தர் வேகமா Ration Card எடுத்துட்டு ஒடி போகிறார். அப்போது அவர் அரிசி வாங்குவாரா இல்ல சர்க்கரை வாக்குவாரா? அவரு அரிசி வாங்க மாட்டாரு சர்க்கரையும் வாங்க மாட்டாரு, மூச்சு தான் வாங்குவாரு."
+    "நம்ம வாழ்க்கைல சந்தோஷம் என்பது ராங்கால் மாதிரி எப்பவாச்சும் வரும் ஆனா கஷ்டம் என்பது கம்பெனிக்கால் மாதிரி இம்சை எப்பவும் வரும்"
  )
 
 @Client.on_message(
@@ -578,6 +584,17 @@ async def dare(_, message):
 async def joke(_, message):
     """ /joke strings """
     effective_stringa = random.choice(JOKE)
+    if message.reply_to_message:
+        await message.reply_to_message.reply_text(effective_stringa)
+    else:
+        await message.reply_text(effective_stringa)
+
+@Client.on_message(
+    filters.command("sing")
+)
+async def sing(_, message):
+    """ /sing strings """
+    effective_stringa = random.choice(SONG)
     if message.reply_to_message:
         await message.reply_to_message.reply_text(effective_stringa)
     else:
