@@ -531,8 +531,8 @@ async def runs(_, message):
 @Client.on_message(
     filters.command("react")
 )
-async def runs(_, message):
-    """ /runs strings """
+async def react(_, message):
+    """ /react strings """
     effective_stringg = random.choice(REACT)
     if message.reply_to_message:
         await message.reply_to_message.reply_text(effective_stringg)
@@ -542,9 +542,9 @@ async def runs(_, message):
 @Client.on_message(
     filters.command("truth")
 )
-async def runs(_, message):
-    """ /runs strings """
-    effective_strings = random.choice(truth)
+async def truth(_, message):
+    """ /truth strings """
+    effective_strings = random.choice(TRUTH)
     if message.reply_to_message:
         await message.reply_to_message.reply_text(effective_strings)
     else:
@@ -553,8 +553,8 @@ async def runs(_, message):
 @Client.on_message(
     filters.command("abuse")
 )
-async def runs(_, message):
-    """ /runs strings """
+async def abuse(_, message):
+    """ /abuse strings """
     effective_stringz = random.choice(ABUSE)
     if message.reply_to_message:
         await message.reply_to_message.reply_text(effective_stringz)
@@ -564,8 +564,8 @@ async def runs(_, message):
 @Client.on_message(
     filters.command("dare")
 )
-async def runs(_, message):
-    """ /runs strings """
+async def dare(_, message):
+    """ /dare strings """
     effective_stringy = random.choice(DARE)
     if message.reply_to_message:
         await message.reply_to_message.reply_text(effective_stringy)
@@ -575,8 +575,8 @@ async def runs(_, message):
 @Client.on_message(
     filters.command("joke")
 )
-async def runs(_, message):
-    """ /runs strings """
+async def joke(_, message):
+    """ /joke strings """
     effective_stringa = random.choice(JOKE)
     if message.reply_to_message:
         await message.reply_to_message.reply_text(effective_stringa)
