@@ -53,37 +53,38 @@ async def index_files(bot, query):
     await index_files_to_db(int(lst_msg_id), chat, msg, bot)
 
 
-@Client.on_message((filters.forwarded | (filters.regex("(https://)?(t\.me/|telegram\.me/|telegram\.dog/)(c/)?(\d+|[a-zA-Z_0-9]+)/(\d+)$")) & filters.text ) & filters.private & filters.incoming)
+@Client.on_message(filters.private & filters.command('index'))
 async def send_for_index(bot, message):
-    if message.text:
+    sk = await bot.ask(message.chat.id, "**Now Send Me Your Channel Last Post Link Or Forward A Last Message From Your Index Channel.**")
+    if sk.text:
         regex = re.compile("(https://)?(t\.me/|telegram\.me/|telegram\.dog/)(c/)?(\d+|[a-zA-Z_0-9]+)/(\d+)$")
-        match = regex.match(message.text)
+        match = regex.match(sk.text)
         if not match:
-            return await message.reply('Invalid link')
+            return await sk.reply('Invalid link\n\nTry again by /index')
         chat_id = match.group(4)
         last_msg_id = int(match.group(5))
         if chat_id.isnumeric():
             chat_id  = int(("-100" + chat_id))
-    elif message.forward_from_chat.type == enums.ChatType.CHANNEL:
-        last_msg_id = message.forward_from_message_id
-        chat_id = message.forward_from_chat.username or message.forward_from_chat.id
+    elif sk.forward_from_chat.type == enums.ChatType.CHANNEL:
+        last_msg_id = sk.forward_from_message_id
+        chat_id = sk.forward_from_chat.username or message.forward_from_chat.id
     else:
         return
     try:
         await bot.get_chat(chat_id)
     except ChannelInvalid:
-        return await message.reply('This may be a private channel / group. Make me an admin over there to index the files.')
+        return await sk.reply('This may be a private channel / group. Make me an admin over there to index the files.')
     except (UsernameInvalid, UsernameNotModified):
-        return await message.reply('Invalid Link specified.')
+        return await sk.reply('Invalid Link specified.')
     except Exception as e:
         logger.exception(e)
-        return await message.reply(f'Errors - {e}')
+        return await sk.reply(f'Errors - {e}')
     try:
         k = await bot.get_messages(chat_id, last_msg_id)
     except:
-        return await message.reply('Make Sure That Iam An Admin In The Channel, if channel is private')
+        return await sk.reply('Make Sure That Iam An Admin In The Channel, if channel is private')
     if k.empty:
-        return await message.reply('This may be group and iam not a admin of the group.')
+        return await sk.reply('This may be group and iam not a admin of the group.')
 
     if message.from_user.id in ADMINS:
         buttons = [
