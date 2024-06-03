@@ -80,13 +80,13 @@ async def give_filter(client, message):
             settings = await get_settings(message.chat.id)
             try:
                 if settings['auto_ffilter']:
-                     await auto_filter(client, message)
+                    await auto_filter(client, message)
             except KeyError:
                 grpid = await active_connection(str(message.from_user.id))
                 await save_group_settings(grpid, 'auto_ffilter', True)
                 settings = await get_settings(message.chat.id)
                 if settings['auto_ffilter']:
-                    await auto_filter(client, message)
+                    await auto_filter(client, message) 
     else: #a better logic to avoid repeated lines of code in auto_filter function
         search = message.text
         temp_files, temp_offset, total_results = await get_search_results(chat_id=message.chat.id, query=search.lower(), offset=0, filter=True)
@@ -2780,6 +2780,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
     
 async def auto_filter(client, msg, spoll=False):
     curr_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
+    # reqstr1 = msg.from_user.id if msg.from_user else 0
+    # reqstr = await client.get_users(reqstr1)
+    
     if not spoll:
         message = msg
         if message.text.startswith("/"): return  # ignore commands
@@ -2989,7 +2992,7 @@ async def auto_filter(client, msg, spoll=False):
             await fuk.delete()
             await message.delete()
 
-async def auto_filter(client, msg, spoll=False):
+async def ai_auto_filter(client, vj_search, msg, m, spoll=False):
     curr_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
     if not spoll:
         message = msg
@@ -2997,7 +3000,7 @@ async def auto_filter(client, msg, spoll=False):
         if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
             return
         if len(message.text) < 100:
-            search = vj_search            
+            search = vj_search
             search = search.lower()
             find = search.split(" ")
             search = ""
@@ -3160,6 +3163,7 @@ async def auto_filter(client, msg, spoll=False):
             try:
                if settings['auto_delete']:
                     await asyncio.sleep(300)
+                    m=await message.reply_text("🔎")
                     await hmm.delete()
                     await message.delete()
             except KeyError:
@@ -3195,8 +3199,7 @@ async def auto_filter(client, msg, spoll=False):
             await asyncio.sleep(300)
             await fuk.delete()
             await message.delete()
-
-
+            
 async def ai_advantage_spell_chok(client, msg):
     mv_id = msg.id
     mv_rqst = msg.text
@@ -3271,7 +3274,8 @@ async def ai_advantage_spell_chok(client, msg):
             if settings['auto_delete']:
                 await asyncio.sleep(600)
                 await spell_check_del.delete()
-                
+
+
 async def advantage_spell_chok(client, msg):
     mv_id = msg.id
     mv_rqst = msg.text
@@ -3296,7 +3300,7 @@ async def advantage_spell_chok(client, msg):
             photo=SPELL_IMG, 
             caption=script.I_CUDNT.format(mv_rqst),
             reply_markup=InlineKeyboardMarkup(button)
-        )        
+        )
         await asyncio.sleep(30)
         await k.delete()
         return
@@ -3312,7 +3316,7 @@ async def advantage_spell_chok(client, msg):
             photo=SPELL_IMG, 
             caption=script.I_CUDNT.format(mv_rqst),
             reply_markup=InlineKeyboardMarkup(button)
-        )        
+        )
         await asyncio.sleep(30)
         await k.delete()
         return
