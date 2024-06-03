@@ -3306,7 +3306,8 @@ async def advantage_spell_chok(client, msg):
             photo=SPELL_IMG, 
             caption=script.I_CUDNT.format(mv_rqst),
             reply_markup=InlineKeyboardMarkup(button)
-        )        await asyncio.sleep(30)
+        )        
+        await asyncio.sleep(30)
         await k.delete()
         return
     movielist = []
@@ -3321,7 +3322,8 @@ async def advantage_spell_chok(client, msg):
             photo=SPELL_IMG, 
             caption=script.I_CUDNT.format(mv_rqst),
             reply_markup=InlineKeyboardMarkup(button)
-        )        await asyncio.sleep(30)
+        )        
+        await asyncio.sleep(30)
         await k.delete()
         return
     movielist += [movie.get('title') for movie in movies]
