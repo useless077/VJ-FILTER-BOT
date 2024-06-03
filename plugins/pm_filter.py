@@ -81,18 +81,12 @@ async def give_filter(client, message):
             try:
                 if settings['auto_ffilter']:
                      await auto_filter(client, message)
-#                    ai_search = True
-#                    reply_msg = await message.reply_text(f"<b><i>Searching For {message.text} 🔍</i></b>")
-#                    await auto_filter(client, message.text, message, reply_msg, ai_search)
             except KeyError:
                 grpid = await active_connection(str(message.from_user.id))
                 await save_group_settings(grpid, 'auto_ffilter', True)
                 settings = await get_settings(message.chat.id)
                 if settings['auto_ffilter']:
                     await auto_filter(client, message)
- #                   ai_search = True
- #                   reply_msg = await message.reply_text(f"<b><i>Searching For {message.text} 🔍</i></b>")
- #                   await auto_filter(client, message.text, message, reply_msg, ai_search)
     else: #a better logic to avoid repeated lines of code in auto_filter function
         search = message.text
         temp_files, temp_offset, total_results = await get_search_results(chat_id=message.chat.id, query=search.lower(), offset=0, filter=True)
@@ -114,9 +108,7 @@ async def pm_text(bot, message):
     if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
   #  if user_id in ADMINS: return # ignore admins
     if PM_SEARCH == True:
-        ai_search = True
-        reply_msg = await bot.send_message(message.from_user.id, f"<b><i>Searching For {content} 🔍</i></b>", reply_to_message_id=message.id)
-        await auto_filter(bot, content, message, reply_msg, ai_search)
+        await auto_filter(bot, message)
     else:
         await message.reply_text(
             text=f"<b>ʜᴇʏ {user} 😍 ,\n\nʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ɪᴛ ɪɴ ᴏᴜʀ <a href=https://t.me/MovieDiscussion24x7>ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ</a> ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ 👇</b>",   
@@ -297,9 +289,7 @@ async def advantage_spoll_choker(bot, query):
             files, offset, total_results = await get_search_results(query.message.chat.id, movie, offset=0, filter=True)
             if files:
                 k = (movie, files, offset, total_results)
-                ai_search = True
-                reply_msg = await query.message.edit_text(f"<b><i>Searching For {movie} 🔍</i></b>")
-                await auto_filter(bot, movie, query, reply_msg, ai_search, k)
+                await auto_filter(bot, query, k)
             else:
                 reqstr1 = query.from_user.id if query.from_user else 0
                 reqstr = await bot.get_users(reqstr1)
@@ -3028,7 +3018,6 @@ async def auto_filter(client, msg, spoll=False):
                 await m.delete()
                 if settings["spell_check"]:
                     return await ai_advantage_spell_chok(client, msg)
-#                    return await advantage_spell_chok(client, name, msg, reply_msg, ai_search)
                 else:
                     return
         else:
@@ -3167,7 +3156,7 @@ async def auto_filter(client, msg, spoll=False):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg") 
             hmm = await message.reply_photo(photo=poster, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await reply_msg.delete()
+            await m.delete()
             try:
                if settings['auto_delete']:
                     await asyncio.sleep(300)
@@ -3206,6 +3195,7 @@ async def auto_filter(client, msg, spoll=False):
             await asyncio.sleep(300)
             await fuk.delete()
             await message.delete()
+
 
 async def ai_advantage_spell_chok(client, msg):
     mv_id = msg.id
