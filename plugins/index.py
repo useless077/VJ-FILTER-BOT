@@ -156,7 +156,7 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
                     break
                 current += 1
                 if current % 40 == 0:
-                    await asyncio.sleep(5)
+                    await asyncio.sleep(2)
                     can = [[InlineKeyboardButton('Cancel', callback_data='index_cancel')]]
                     reply = InlineKeyboardMarkup(can)
                     await msg.edit_text(
