@@ -2999,7 +2999,7 @@ async def auto_filter(client, msg, spoll=False):
             await fuk.delete()
             await message.delete()
 
-async def ai_auto_filter(client, vj_search, msg, m, spoll=False):
+async def auto_filter(client, msg, spoll=False):
     curr_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
     if not spoll:
         message = msg
@@ -3007,7 +3007,8 @@ async def ai_auto_filter(client, vj_search, msg, m, spoll=False):
         if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
             return
         if len(message.text) < 100:
-            search = vj_search            search = search.lower()
+            search = vj_search            
+            search = search.lower()
             find = search.split(" ")
             search = ""
             removes = ["in","upload", "series", "full", "horror", "thriller", "mystery", "print", "file"]
@@ -3026,7 +3027,7 @@ async def ai_auto_filter(client, vj_search, msg, m, spoll=False):
             if not files:
                 await m.delete()
                 if settings["spell_check"]:
-                    return await advantage_spell_chok(client, msg)
+                    return await ai_advantage_spell_chok(client, msg)
 #                    return await advantage_spell_chok(client, name, msg, reply_msg, ai_search)
                 else:
                     return
