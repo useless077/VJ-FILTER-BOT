@@ -2170,7 +2170,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "source":
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='about'),
-            InlineKeyboardButton('"Cᴏɴᴛᴀᴄᴛ", url="telegram.me/YaarulaNee")
+            InlineKeyboardButton("Cᴏɴᴛᴀᴄᴛ", url="telegram.me/YaarulaNee")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
