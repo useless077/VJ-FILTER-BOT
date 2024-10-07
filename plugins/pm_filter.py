@@ -149,7 +149,6 @@ async def next_page(bot, query):
     temp.SHORT[query.from_user.id] = query.message.chat.id
     settings = await get_settings(query.message.chat.id)
     pre = 'filep' if settings['file_secure'] else 'file'
-#    pre = 'Chat' if settings['redirect_to'] == 'Chat' else 'files'
     if settings['button']:
         btn = [
             [
@@ -450,8 +449,8 @@ async def filter_yearss_cb_handler(client: Client, query: CallbackQuery):
         except MessageNotModified:
             pass
     await query.answer()  
+    
 # Episode
-
 @Client.on_callback_query(filters.regex(r"^episodes#"))
 async def episodes_cb_handler(client: Client, query: CallbackQuery):
 
