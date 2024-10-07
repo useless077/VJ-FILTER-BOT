@@ -1520,7 +1520,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>[DK_BOTx] {title}</code>\n\n'              
                 f'<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>',
                 True,
-                'html',
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
