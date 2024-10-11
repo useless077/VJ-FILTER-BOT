@@ -1519,8 +1519,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>[TownBus] {title}</code>\n\n'              
                 f'<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>',
                 quote=True,
-                disable_web_page_preview=True,
-       #         parse_mode=enums.ParseMode.HTML,
+           #     disable_web_page_preview=True,
+                parse_mode=enums.ParseMode.HTML,
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📥 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽 𝖫𝗂𝗇𝗄 📥 ", url=msg.link),  # we download Link
                                                     InlineKeyboardButton("⚠️ 𝖢𝖺𝗇'𝗍 𝖠𝖼𝖼𝖾𝗌𝗌 ❓ 𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾 ⚠️", url=f'https://t.me/TamilMovies5k')]])  # web stream Link
             )
@@ -1543,8 +1543,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except Exception as e:
             logger.exception(e, exc_info=True)
             await query.answer(f"Encountering Issues", True)
- #       else:    
-  #          await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
+        else:    
+            await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
     
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
