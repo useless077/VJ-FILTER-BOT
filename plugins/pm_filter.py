@@ -1514,23 +1514,27 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 caption=f'<b>Hai 👋 {query.from_user.mention}</b> 😍\n\n<code>[TamilBots] {title}</code>\n\n⚠️ <i>This file will be deleted from here within 5 minute as it has copyright ... !!!</i>\n\n<i>பதிப்புரிமை காரணமாக, கோப்பு 5 நிமிடங்களில் இங்கிருந்து அகற்றப்படும், எனவே இங்கிருந்து வேறு இடத்திற்கு மாற்றிய பின் பதிவிறக்கவும்!</i>\n\n<i><b>⚡ Powered by {query.message.chat.title}</b></i>',
                 protect_content=True if settings["file_secure"] else False 
             )
-            msg1 = await query.message.reply(
+            msg1 = await query.message.reply_text(
                 f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n'           
                 f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>[TownBus] {title}</code>\n\n'              
                 f'<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>',
-                True,
-                parse_mode=enums.ParseMode.HTML,
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton('📥 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽 𝖫𝗂𝗇𝗄 📥 ', url = msg.link)
-                        ],                       
-                        [
-                            InlineKeyboardButton("⚠️ 𝖢𝖺𝗇'𝗍 𝖠𝖼𝖼𝖾𝗌𝗌 ❓ 𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾 ⚠️", url=f'https://t.me/TamilMovies5k')
-                        ]
-                    ]
-                )
+                quote=True,
+                disable_web_page_preview=True,
+       #         parse_mode=enums.ParseMode.HTML,
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📥 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽 𝖫𝗂𝗇𝗄 📥 ", url=msg.link),  # we download Link
+                                                    InlineKeyboardButton("⚠️ 𝖢𝖺𝗇'𝗍 𝖠𝖼𝖼𝖾𝗌𝗌 ❓ 𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾 ⚠️", url=f'https://t.me/TamilMovies5k')]])  # web stream Link
             )
+ #               reply_markup=InlineKeyboardMarkup(
+ #                   [
+ #                       [
+ #                           InlineKeyboardButton('📥 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽 𝖫𝗂𝗇𝗄 📥 ', url = msg.link)
+ #                       ],                       
+  #                      [
+  #                          InlineKeyboardButton("⚠️ 𝖢𝖺𝗇'𝗍 𝖠𝖼𝖼𝖾𝗌𝗌 ❓ 𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾 ⚠️", url=f'https://t.me/TamilMovies5k')
+  #                      ]
+  #                  ]
+   #             )
+  #          )
             await query.answer('Check Out The Chat',)
             await asyncio.sleep(300)
             await msg1.delete()
