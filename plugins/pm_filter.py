@@ -1526,17 +1526,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📥 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽 𝖫𝗂𝗇𝗄 📥 ", url=msg.link),  # we download Link
                                                     InlineKeyboardButton("⚠️ 𝖢𝖺𝗇'𝗍 𝖠𝖼𝖼𝖾𝗌𝗌 ❓ 𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾 ⚠️", url=f'https://t.me/TamilMovies5k')]])  # web stream Link
             )
-               reply_markup=InlineKeyboardMarkup(
-                     [
-                         [
-                             InlineKeyboardButton("📥 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽 𝖫𝗂𝗇𝗄 📥", url = msg.link)
-                         ],                       
-                         [
-                             InlineKeyboardButton('⚠️ 𝖢𝖺𝗇'𝗍 𝖠𝖼𝖼𝖾𝗌𝗌 ❓ 𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾 ⚠️', url=f'https://t.me/TamilMovies5k')
-                         ]
-                     ]
-                 )
-            )
             await query.answer("Check Out The Chat", show_alert=True)
             await asyncio.sleep(300)
             await msg1.delete()
