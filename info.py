@@ -17,6 +17,15 @@ def is_enabled(value, default):
     else:
         return default
 
+def redirected_env(value):
+    value = str(value)
+    if value.lower() in ['chat', 'group', 'channel', 'supergroup', 'true']:
+        return 'Chat'
+    elif value.lower() in ['user', '0', 'pm', 'personal', 'bot', 'bot pm', 'false']:
+        return 'PM'
+    else:
+        return 'Chat'
+
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '20389440'))
