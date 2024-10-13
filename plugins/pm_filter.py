@@ -1520,28 +1520,28 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n'           
                 f'<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>[TownBus] {title}</code>\n\n'              
                 f'<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>',
-         #       quote=True,
-           #     disable_web_page_preview=True,
+                quote=True,
+                disable_web_page_preview=True,
                 parse_mode=enums.ParseMode.HTML,
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📥 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽 𝖫𝗂𝗇𝗄 📥 ", url=msg.link),  # we download Link
                                                     InlineKeyboardButton("⚠️ 𝖢𝖺𝗇'𝗍 𝖠𝖼𝖼𝖾𝗌𝗌 ❓ 𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾 ⚠️", url=f'https://t.me/TamilMovies5k')]])  # web stream Link
             )
- #               reply_markup=InlineKeyboardMarkup(
- #                   [
- #                       [
- #                           InlineKeyboardButton("📥 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽 𝖫𝗂𝗇𝗄 📥", url = msg.link)
- #                       ],                       
-  #                      [
-  #                          InlineKeyboardButton('⚠️ 𝖢𝖺𝗇'𝗍 𝖠𝖼𝖼𝖾𝗌𝗌 ❓ 𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾 ⚠️', url=f'https://t.me/TamilMovies5k')
-  #                      ]
-  #                  ]
-   #             )
-  #          )
+               reply_markup=InlineKeyboardMarkup(
+                     [
+                         [
+                             InlineKeyboardButton("📥 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽 𝖫𝗂𝗇𝗄 📥", url = msg.link)
+                         ],                       
+                         [
+                             InlineKeyboardButton('⚠️ 𝖢𝖺𝗇'𝗍 𝖠𝖼𝖼𝖾𝗌𝗌 ❓ 𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾 ⚠️', url=f'https://t.me/TamilMovies5k')
+                         ]
+                     ]
+                 )
+            )
             await query.answer("Check Out The Chat", show_alert=True)
             await asyncio.sleep(300)
             await msg1.delete()
             await msg.delete()
-#            del msg1, msg
+            del msg1, msg
         except Exception as e:
             logger.exception(e, exc_info=True)
             await query.answer(f"Encountering Issues", show_alert=True)
