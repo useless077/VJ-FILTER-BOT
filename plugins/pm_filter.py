@@ -1513,8 +1513,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 file_id=file_id,
                 caption=f'<b>Hai 👋 {query.from_user.mention}</b> 😍\n\n<code>[TamilBots] {title}</code>\n\n⚠️ <i>This file will be deleted from here within 5 minute as it has copyright ... !!!</i>\n\n<i>பதிப்புரிமை காரணமாக, கோப்பு 5 நிமிடங்களில் இங்கிருந்து அகற்றப்படும், எனவே இங்கிருந்து வேறு இடத்திற்கு மாற்றிய பின் பதிவிறக்கவும்!</i>\n\n<i><b>⚡ Powered by {query.message.chat.title}</b></i>',
                 protect_content=True if settings["file_secure"] else False,
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Channel", url="https://t.me/TamilMovies5k"),  # we download Link
-                                                    InlineKeyboardButton('Group', url=f'https://t.me/Moviediscussion24x7')]])  # web stream Link
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📢 Channel", url="TownBus"),  # we download Link
+                                                    InlineKeyboardButton('📽️ Group', url=f'https://t.me/Moviediscussion24x7')]])  # web stream Link
             )
             msg1 = await query.message.reply_text(
                 f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n'           
@@ -1534,8 +1534,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except Exception as e:
             logger.exception(e, exc_info=True)
             await query.answer(f"Encountering Issues", show_alert=True)
-        else:    
-            await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
+#        else:    
+#            await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
     
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
