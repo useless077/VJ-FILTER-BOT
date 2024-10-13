@@ -143,6 +143,9 @@ else:
     ON_HEROKU = False
 URL = environ.get("URL", "https://townbus-tamilbots.koyeb.app/")
 
+# redirect to channel for files 
+REDIRECT_TO = (environ.get('REDIRECT_TO', 0))
+
 
 # Rename Info ; If True Then Bot Rename File Else Not
 RENAME_MODE = bool(environ.get('RENAME_MODE', True)) # Set True or Flase
