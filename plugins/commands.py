@@ -812,6 +812,16 @@ async def settings(client, message):
             ],
             [
                 InlineKeyboardButton(
+                    'Redirect To',
+                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',
+                ),
+                InlineKeyboardButton(
+                    '👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
+                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',
+                ),
+            ],
+            [
+                InlineKeyboardButton(
                     'Fɪʟᴇ Sᴇɴᴅ Mᴏᴅᴇ',
                     callback_data=f'setgs#botpm#{settings["botpm"]}#{grp_id}',
                 ),
@@ -911,6 +921,16 @@ async def settings(client, message):
                 InlineKeyboardButton(
                     'Bᴜᴛᴛᴏɴ' if settings["button"] else 'Tᴇxᴛ',
                     callback_data=f'setgs#button#{settings["button"]}#{grp_id}',
+                ),
+            ],
+            [
+                InlineKeyboardButton(
+                    'Redirect To',
+                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',
+                ),
+                InlineKeyboardButton(
+                    '👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
+                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',
                 ),
             ],
             [
