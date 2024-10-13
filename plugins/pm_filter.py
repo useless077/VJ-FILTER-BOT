@@ -1513,7 +1513,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 file_id=file_id,
                 caption=f'<b>Hai 👋 {query.from_user.mention}</b> 😍\n\n<code>[TamilBots] {title}</code>\n\n⚠️ <i>This file will be deleted from here within 5 minute as it has copyright ... !!!</i>\n\n<i>பதிப்புரிமை காரணமாக, கோப்பு 5 நிமிடங்களில் இங்கிருந்து அகற்றப்படும், எனவே இங்கிருந்து வேறு இடத்திற்கு மாற்றிய பின் பதிவிறக்கவும்!</i>\n\n<i><b>⚡ Powered by {query.message.chat.title}</b></i>',
                 protect_content=True if settings["file_secure"] else False,
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📢 Channel", url="TownBus"),  # we download Link
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📢 Channel", url="f'https://t.me/TownBus"),  # we download Link
                                                     InlineKeyboardButton('📽️ Group', url=f'https://t.me/Moviediscussion24x7')]])  # web stream Link
             )
             msg1 = await query.message.reply_text(
