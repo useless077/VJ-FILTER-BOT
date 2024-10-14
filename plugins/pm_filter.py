@@ -1538,7 +1538,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     ]
                 )
             )
-            await query.answer("Check Out The Chat", show_alert=True)
+     #       await query.answer("Check Out The Chat", show_alert=True)
             await asyncio.sleep(300)
             await msg1.delete()
             await msg.delete()
@@ -1546,8 +1546,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except Exception as e:
             logger.exception(e, exc_info=True)
             await query.answer(f"Encountering Issues", show_alert=True)
-#        else:    
-#            await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
+        else:    
+            await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
 
     elif query.data.startswith("del"):
         ident, file_id = query.data.split("#")
@@ -1581,7 +1581,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             mssg1 = await query.message.reply_text(
                 f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>[TownBus] {title}</code>\n\n<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>',
                 quote=True,
-     #           disable_web_page_preview=True,
+                disable_web_page_preview=True,
                 parse_mode=enums.ParseMode.HTML,
                 reply_markup=InlineKeyboardMarkup(
                     [
@@ -1594,15 +1594,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     ]
                 )
             )
-            await query.answer("Check Out The Chat", show_alert=True)
+    #        await query.answer("Check Out The Chat", show_alert=True)
             await asyncio.sleep(300)
             await mssg1.delete()
             await mssg.delete()
         except Exception as e:
             logger.exception(e, exc_info=True)
             await query.answer(f"Encountering Issues", show_alert=True)
-#        else:    
-#            await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
+        else:    
+            await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
   
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
