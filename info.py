@@ -144,7 +144,7 @@ else:
 URL = environ.get("URL", "https://townbus-tamilbots.koyeb.app/")
 
 # redirect to channel for files 
-REDIRECT_TO = (environ.get('REDIRECT_TO', 0))
+REDIRECT_TO = (environ.get('REDIRECT_TO', channel))
 
 
 # Rename Info ; If True Then Bot Rename File Else Not
