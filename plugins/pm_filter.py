@@ -148,8 +148,8 @@ async def next_page(bot, query):
     temp.GETALL[key] = files
     temp.SHORT[query.from_user.id] = query.message.chat.id
     settings = await get_settings(query.message.chat.id)
-#    pre = 'filep' if settings['file_secure'] else 'file'
-    pre = 'Chat' if settings['redirect_to'] == 'Chat' else pre
+    pre = 'filep' if settings['file_secure'] else 'file'
+#    pre = 'Chat' if settings['redirect_to'] == 'Chat' else pre
     if settings['button']:
         btn = [
             [
@@ -375,8 +375,8 @@ async def filter_yearss_cb_handler(client: Client, query: CallbackQuery):
         return
     temp.GETALL[key] = files
     settings = await get_settings(message.chat.id)
-#    pre = 'filep' if settings['file_secure'] else 'file'
-    pre = 'Chat' if settings['redirect_to'] == 'Chat' else pre
+    pre = 'filep' if settings['file_secure'] else 'file'
+#    pre = 'Chat' if settings['redirect_to'] == 'Chat' else pre
     if settings["button"]:
         btn = [
             [
@@ -532,8 +532,8 @@ async def filter_episodes_cb_handler(client: Client, query: CallbackQuery):
         return
     temp.GETALL[key] = files
     settings = await get_settings(message.chat.id)
-#    pre = 'filep' if settings['file_secure'] else 'file'
-    pre = 'Chat' if settings['redirect_to'] == 'Chat' else pre
+    pre = 'filep' if settings['file_secure'] else 'file'
+#    pre = 'Chat' if settings['redirect_to'] == 'Chat' else pre
     if settings["button"]:
         btn = [
             [
@@ -692,8 +692,8 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         return
     temp.GETALL[key] = files
     settings = await get_settings(message.chat.id)
-#    pre = 'filep' if settings['file_secure'] else 'file'
-    pre = 'Chat' if settings['redirect_to'] == 'Chat' else pre
+    pre = 'filep' if settings['file_secure'] else 'file'
+#    pre = 'Chat' if settings['redirect_to'] == 'Chat' else pre
     if settings["button"]:
         btn = [
             [
@@ -881,8 +881,8 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         return
     temp.GETALL[key] = files
     settings = await get_settings(message.chat.id)
- #   pre = 'filep' if settings['file_secure'] else 'file'
-    pre = 'Chat' if settings['redirect_to'] == 'Chat' else pre
+    pre = 'filep' if settings['file_secure'] else 'file'
+#    pre = 'Chat' if settings['redirect_to'] == 'Chat' else pre
     if settings["button"]:
         btn = [
             [
@@ -1022,8 +1022,8 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
     # else:
     #     await save_group_settings(message.chat.id, 'is_shortlink', False)
     #     ENABLE_SHORTLINK = False
- #   pre = 'filep' if settings['file_secure'] else 'file'
-    pre = 'Chat' if settings['redirect_to'] == 'Chat' else pre
+    pre = 'filep' if settings['file_secure'] else 'file'
+#    pre = 'Chat' if settings['redirect_to'] == 'Chat' else pre
     if settings["button"]:
         btn = [
             [
@@ -1524,9 +1524,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
             msg1 = await query.message.reply_text(
                 f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>[TownBus] {title}</code>\n\n<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>',
-                quote=True,
-                disable_web_page_preview=True,
-                parse_mode=enums.ParseMode.HTML,
+       #         quote=True,
+       #         disable_web_page_preview=True,
+       #         parse_mode=enums.ParseMode.HTML,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -1580,9 +1580,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
             mssg1 = await query.message.reply_text(
                 f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>[TownBus] {title}</code>\n\n<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>',
-                quote=True,
-                disable_web_page_preview=True,
-                parse_mode=enums.ParseMode.HTML,
+         #       quote=True,
+         #       disable_web_page_preview=True,
+         #       parse_mode=enums.ParseMode.HTML,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
