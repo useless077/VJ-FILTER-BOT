@@ -1690,12 +1690,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('Bᴜᴛᴛᴏɴ' if settings["button"] else 'Tᴇxᴛ',
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
-                [
-                    InlineKeyboardButton( 'Redirect To',
-                                         callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
-                    InlineKeyboardButton('👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
-                                         callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
-                ],
+        #        [
+       #             InlineKeyboardButton( 'Redirect To',
+       #                                  callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
+       #             InlineKeyboardButton('👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
+       #                                  callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
+       #         ],
                 [
                     InlineKeyboardButton('Fɪʟᴇ Sᴇɴᴅ Mᴏᴅᴇ', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
                     InlineKeyboardButton('Mᴀɴᴜᴀʟ Sᴛᴀʀᴛ' if settings["botpm"] else 'Aᴜᴛᴏ Sᴇɴᴅ',
@@ -1757,11 +1757,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton( 'Redirect To',
-                                         callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
-                    InlineKeyboardButton('👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
-                                         callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
-                ],
+      #              InlineKeyboardButton( 'Redirect To',
+     #                                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
+     #               InlineKeyboardButton('👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
+     #                                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
+     #           ],
                 [
                     InlineKeyboardButton('Fɪʟᴇ Sᴇɴᴅ Mᴏᴅᴇ', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
                     InlineKeyboardButton('Mᴀɴᴜᴀʟ Sᴛᴀʀᴛ' if settings["botpm"] else 'Aᴜᴛᴏ Sᴇɴᴅ',
@@ -1844,12 +1844,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('Bᴜᴛᴛᴏɴ' if settings["button"] else 'Tᴇxᴛ',
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
-                [
-                    InlineKeyboardButton( 'Redirect To',
-                                         callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
-                    InlineKeyboardButton('👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
-                                         callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
-                ],
+     #           [
+     #               InlineKeyboardButton( 'Redirect To',
+    #                                     callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
+     #               InlineKeyboardButton('👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
+     #                                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
+     #           ],
                 [
                     InlineKeyboardButton('Fɪʟᴇ Sᴇɴᴅ Mᴏᴅᴇ', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
                     InlineKeyboardButton('Mᴀɴᴜᴀʟ Sᴛᴀʀᴛ' if settings["botpm"] else 'Aᴜᴛᴏ Sᴇɴᴅ',
@@ -1910,12 +1910,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('Bᴜᴛᴛᴏɴ' if settings["button"] else 'Tᴇxᴛ',
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
-                [
-                    InlineKeyboardButton( 'Redirect To',
-                                         callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
-                    InlineKeyboardButton('👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
-                                         callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
-                ],
+   #             [
+   #                 InlineKeyboardButton( 'Redirect To',
+   #                                      callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
+   #                 InlineKeyboardButton('👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
+  #                                       callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
+   #             ],
                 [
                     InlineKeyboardButton('Fɪʟᴇ Sᴇɴᴅ Mᴏᴅᴇ', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
                     InlineKeyboardButton('Mᴀɴᴜᴀʟ Sᴛᴀʀᴛ' if settings["botpm"] else 'Aᴜᴛᴏ Sᴇɴᴅ',
@@ -2802,12 +2802,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('Bᴜᴛᴛᴏɴ' if settings["button"] else 'Tᴇxᴛ',
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
-                [
-                    InlineKeyboardButton( 'Redirect To',
-                                         callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
-                    InlineKeyboardButton('👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
-                                         callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
-                ],
+     #           [
+     #               InlineKeyboardButton( 'Redirect To',
+     #                                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
+     #               InlineKeyboardButton('👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
+     #                                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
+     #           ],
                 [
                     InlineKeyboardButton('Fɪʟᴇ Sᴇɴᴅ Mᴏᴅᴇ', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
                     InlineKeyboardButton('Mᴀɴᴜᴀʟ Sᴛᴀʀᴛ' if settings["botpm"] else 'Aᴜᴛᴏ Sᴇɴᴅ',
@@ -2868,12 +2868,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('Bᴜᴛᴛᴏɴ' if settings["button"] else 'Tᴇxᴛ',
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
-                [
-                    InlineKeyboardButton( 'Redirect To',
-                                         callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
-                    InlineKeyboardButton('👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
-                                         callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
-                ],
+      #          [
+     #               InlineKeyboardButton( 'Redirect To',
+     #                                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
+     #               InlineKeyboardButton('👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
+    #                                     callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
+    #            ],
                 [
                     InlineKeyboardButton('Fɪʟᴇ Sᴇɴᴅ Mᴏᴅᴇ', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
                     InlineKeyboardButton('Mᴀɴᴜᴀʟ Sᴛᴀʀᴛ' if settings["botpm"] else 'Aᴜᴛᴏ Sᴇɴᴅ',
@@ -2971,7 +2971,7 @@ async def auto_filter(client, msg, spoll=False):
         settings = await get_settings(message.chat.id)
         await msg.message.delete()
     pre = 'filep' if settings['file_secure'] else 'file'
-    pre = 'Chat' if settings['redirect_to'] == 'Chat' else pre
+ #   pre = 'Chat' if settings['redirect_to'] == 'Chat' else pre
     key = f"{message.chat.id}-{message.id}"
     FRESH[key] = search
     temp.GETALL[key] = files
