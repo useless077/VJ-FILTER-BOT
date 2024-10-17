@@ -1756,7 +1756,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('Bᴜᴛᴛᴏɴ' if settings["button"] else 'Tᴇxᴛ',
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
-                [
+       #         [
       #              InlineKeyboardButton( 'Redirect To',
      #                                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',),
      #               InlineKeyboardButton('👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
