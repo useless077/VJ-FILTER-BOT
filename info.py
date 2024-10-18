@@ -17,14 +17,6 @@ def is_enabled(value, default):
     else:
         return default
 
-def redirected_env(value):
-    value = str(value)
-    if value.lower() in ['chat', 'group', 'channel', 'supergroup', 'true']:
-        return 'Chat'
-    elif value.lower() in ['user', '0', 'pm', 'personal', 'bot', 'bot pm', 'false']:
-        return 'PM'
-    else:
-        return 'Chat'
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
@@ -142,9 +134,6 @@ if 'DYNO' in environ:
 else:
     ON_HEROKU = False
 URL = environ.get("URL", "https://townbus-tamilbots.koyeb.app/")
-
-# redirect to channel for files 
-REDIRECT_TO = (environ.get('REDIRECT_TO', 0))
 
 
 # Rename Info ; If True Then Bot Rename File Else Not
