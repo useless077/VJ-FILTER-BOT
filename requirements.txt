@@ -1,4 +1,4 @@
-pyrofork
+pyrofork==2.3.45
 tgcrypto 
 pymongo[srv]==3.12.3 
 motor==2.5.1 
@@ -53,7 +53,7 @@ ytthumb
 jinja2
 apscheduler
 pyshorteners
-pyromod==1.5
+# pyromod==1.5
 colorama
 openai==0.25.0
 
