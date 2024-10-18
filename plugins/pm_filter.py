@@ -1522,11 +1522,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📢 Channel", url=f'https://t.me/TownBus'),  # we download Link
                                                     InlineKeyboardButton('📽️ Group', url=f'https://t.me/Moviediscussion24x7')]])  # web stream Link
             )
-            msg1 = await query.message.reply_text(
+            msg1 = await query.answer(
                 f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>[TownBus] {title}</code>\n\n<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>',
-       #         quote=True,
-       #         disable_web_page_preview=True,
-       #         parse_mode=enums.ParseMode.HTML,
+                quote=True,
+        #        disable_web_page_preview=True,
+                parse_mode=enums.ParseMode.HTML,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -1542,7 +1542,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await asyncio.sleep(300)
             await msg1.delete()
             await msg.delete()
-            del msg1, msg
+   #         del msg1, msg
         except Exception as e:
             logger.exception(e, exc_info=True)
             await query.answer(f"Encountering Issues", show_alert=True)
@@ -1578,11 +1578,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📢 Channel", url=f'https://t.me/TownBus'),  # we download Link
                                                     InlineKeyboardButton('📽️ Group', url=f'https://t.me/Moviediscussion24x7')]])  # web stream Link
             )
-            mssg1 = await query.message.reply_text(
+            mssg1 = await query.answer(
                 f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>[TownBus] {title}</code>\n\n<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>',
-         #       quote=True,
+                quote=True,
          #       disable_web_page_preview=True,
-         #       parse_mode=enums.ParseMode.HTML,
+                parse_mode=enums.ParseMode.HTML,
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
