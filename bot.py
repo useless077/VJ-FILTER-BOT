@@ -22,8 +22,7 @@ logging.basicConfig(
 logging.getLogger("aiohttp").setLevel(logging.ERROR)
 logging.getLogger("aiohttp.web").setLevel(logging.ERROR)
 
-
-from pyrogram import Client, __version__
+from pyrogram import Client, idle
 from pyrogram.raw.all import layer
 from database.ia_filterdb import Media
 from database.users_chats_db import db
@@ -38,12 +37,9 @@ from aiohttp import web
 from plugins import web_server
 
 import asyncio
-from pyromod import listen
-from pyrogram import idle
 from TechVJ.bot import TechVJBot
 from TechVJ.util.keepalive import ping_server
 from TechVJ.bot.clients import initialize_clients
-
 
 ppath = "plugins/*.py"
 files = glob.glob(ppath)
