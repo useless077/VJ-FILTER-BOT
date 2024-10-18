@@ -210,10 +210,11 @@ async def get_settings(group_id):
     return settings
     
 async def save_group_settings(group_id, key, value):
-    current = await get_settings(group_id)
-    current[key] = redirected_env(value) if key == "redirect_to"  else value
-    temp.SETTINGS[group_id] = current
-    await db.update_settings(group_id, current)
+    settings = temp.SETTINGS.get(group_id)
+    if not settings:
+        settings = await db.get_settings(group_id)
+        temp.SETTINGS[group_id] = settings
+    return settings
     
 def get_size(size):
     """Get size in readable format"""
