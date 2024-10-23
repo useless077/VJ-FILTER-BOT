@@ -35,6 +35,7 @@ from datetime import date, datetime
 import pytz
 from aiohttp import web
 from plugins import web_server
+from plugins.clone import restart_bots
 
 import asyncio
 from TechVJ.bot import TechVJBot
@@ -83,6 +84,10 @@ async def start():
     now = datetime.now(tz)
     time = now.strftime("%H:%M:%S %p")
     await TechVJBot.send_message(chat_id=LOG_CHANNEL, text=script.RESTART_TXT.format(today, time))
+    if CLONE_MODE == True:
+        print("Restarting All Clone Bots.......")
+        await restart_bots()
+        print("Restarted All Clone Bots.")
     app = web.AppRunner(await web_server())
     await app.setup()
     bind_address = "0.0.0.0"
