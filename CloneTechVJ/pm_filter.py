@@ -15,6 +15,7 @@ from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidD
 from utils import get_size, is_subscribed, pub_is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings, get_shortlink, get_tutorial, send_all, get_cap
 from database.users_chats_db import db
 from database.ia_filterdb import Media, get_file_details, get_search_results, get_bad_files
+from random import choice
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
@@ -30,12 +31,21 @@ SPELL_CHECK = {}
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
+        try:
+        await message.react(emoji=random.choice(EMOJIS))
+    except Exception:
+        pass
     ai_search = True
     reply_msg = await message.reply_text(f"<b><i>Searching For {message.text} 🔍</i></b>")
     await auto_filter(client, message.text, message, reply_msg, ai_search)
             
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pm_text(bot, message):
+      #  await message.react(emoji="♥️")
+    try:
+        await message.react(emoji=random.choice(EMOJIS))
+    except Exception:
+        pass
     content = message.text
     user = message.from_user.first_name
     user_id = message.from_user.id
