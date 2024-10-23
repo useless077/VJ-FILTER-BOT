@@ -11,7 +11,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
-from utils import get_size, is_subscribed, pub_is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings, get_shortlink, get_tutorial, send_all, get_cap
+from utils import get_size, is_subscribed, pub_is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings, get_shortlink, get_tutorial, send_all, get_cap, humanbytes
 from database.users_chats_db import db
 from database.ia_filterdb import Media, get_file_details, get_search_results, get_bad_files
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, make_inactive
@@ -30,7 +30,6 @@ import logging
 from urllib.parse import quote_plus
 from TechVJ.util.file_properties import get_name, get_hash, get_media_file_size
 from random import choice
-from utils import humanbytes
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
@@ -2034,6 +2033,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
                 InlineKeyboardButton('​📢 🇹​​🇦​​🇲​​🇮​​🇱​ ​🇲​​🇴​​🇻​​🇮​​🇪​ 5️⃣​🇰​', url=CHNL_LNK)
             ]]
+        if CLONE_MODE == True:
+            buttons.append([InlineKeyboardButton('🤖 Cʀᴇᴀᴛᴇ Yᴏᴜʀ Oᴡɴ Cʟᴏɴᴇ Bᴏᴛ 🤖', callback_data='clone')])
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
@@ -2047,6 +2048,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         await query.answer(MSG_ALRT)
 
+    elif query.data == "clone":
+        buttons = [[
+            InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='start')
+        ]]
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.CLONE_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+        
     elif query.data == "filters":
         buttons = [[
             InlineKeyboardButton('Mᴀɴᴜᴀʟ FIʟᴛᴇʀ', callback_data='manuelfilter'),
