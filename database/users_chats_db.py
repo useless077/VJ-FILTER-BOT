@@ -6,7 +6,7 @@ import re
 from pymongo.errors import DuplicateKeyError
 import motor.motor_asyncio
 from pymongo import MongoClient
-from info import DATABASE_NAME, DATABASE_URI, CUSTOM_FILE_CAPTION, IMDB, IMDB_TEMPLATE, MELCOW_NEW_USERS, P_TTI_SHOW_OFF, SINGLE_BUTTON, SPELL_CHECK_REPLY, PROTECT_CONTENT, AUTO_DELETE, MAX_BTN, AUTO_FFILTER, SHORTLINK_API, SHORTLINK_URL, IS_SHORTLINK, TUTORIAL, IS_TUTORIAL 
+from info import DATABASE_NAME, DATABASE_URI, CUSTOM_FILE_CAPTION, IMDB, IMDB_TEMPLATE, MELCOW_NEW_USERS, P_TTI_SHOW_OFF, SINGLE_BUTTON, SPELL_CHECK_REPLY, PROTECT_CONTENT, AUTO_DELETE, MAX_BTN, AUTO_FFILTER, SHORTLINK_API, SHORTLINK_URL, IS_SHORTLINK, TUTORIAL, IS_TUTORIAL
 import time
 import datetime
 
@@ -39,6 +39,31 @@ async def delete_all_referal_users(user_id):
 
     
 class Database:
+
+        default_setgs = {
+        'button': SINGLE_BUTTON,
+        'botpm': P_TTI_SHOW_OFF,
+        'file_secure': PROTECT_CONTENT,
+        'imdb': IMDB,
+        'spell_check': SPELL_CHECK_REPLY,
+        'welcome': MELCOW_NEW_USERS,
+        'auto_delete': AUTO_DELETE,
+        'auto_ffilter': AUTO_FFILTER,
+        'max_btn': MAX_BTN,
+        'template': IMDB_TEMPLATE,
+        'caption': CUSTOM_FILE_CAPTION,
+        'shortlink': SHORTLINK_URL,
+        'shortlink_api': SHORTLINK_API,
+        'is_shortlink': IS_SHORTLINK,
+        'fsub': None,
+        'tutorial': TUTORIAL,
+        'is_tutorial': IS_TUTORIAL,
+        'vj': None,
+        'techvj': None,
+        'tech_vj': None,
+        'vjtech': None,
+        'vj_tech': None
+    }
     
     def __init__(self, uri, database_name):
         self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
@@ -82,6 +107,43 @@ class Database:
     async def total_users_count(self):
         count = await self.col.count_documents({})
         return count
+
+    async def add_clone_bot(self, bot_id, user_id, bot_token):
+        settings = {
+            'bot_id': bot_id,
+            'bot_token': bot_token,
+            'user_id': user_id,
+            'url': None,
+            'api': None,
+            'tutorial': None,
+            'update_channel_link': None
+        }
+        await self.bot.insert_one(settings)
+
+    async def is_clone_exist(self, user_id):
+        clone = await self.bot.find_one({'user_id': int(user_id)})
+        return bool(clone)
+
+    async def delete_clone(self, user_id):
+        await self.bot.delete_many({'user_id': int(user_id)})
+
+    async def get_clone(self, user_id):
+        clone_data = await self.bot.find_one({"user_id": user_id})
+        return clone_data
+            
+    async def update_clone(self, user_id, user_data):
+        await self.bot.update_one({"user_id": user_id}, {"$set": user_data}, upsert=True)
+
+    async def get_bot(self, bot_id):
+        bot_data = await self.bot.find_one({"bot_id": bot_id})
+        return bot_data
+            
+    async def update_bot(self, bot_id, bot_data):
+        await self.bot.update_one({"bot_id": bot_id}, {"$set": bot_data}, upsert=True)
+    
+    async def get_all_bots(self):
+        return self.bot.find({})
+     
     
     async def remove_ban(self, id):
         ban_status = dict(
