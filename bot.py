@@ -2,13 +2,10 @@
 # Subscribe YouTube Channel For Amazing Bot @Tech_VJ
 # Ask Doubt on telegram @KingVJ01
 
-import sys
-import glob
-import importlib
+# Clone Code Credit : YT - @Tech_VJ / TG - @VJ_Bots / GitHub - @VJBots
+
+import sys, glob, importlib, logging, logging.config, pytz, asyncio
 from pathlib import Path
-from pyrogram import idle
-import logging
-import logging.config
 
 # Get logging configurations
 logging.config.fileConfig('logging.conf')
@@ -22,22 +19,18 @@ logging.basicConfig(
 logging.getLogger("aiohttp").setLevel(logging.ERROR)
 logging.getLogger("aiohttp.web").setLevel(logging.ERROR)
 
-from pyrogram import Client, idle, __version__
-from pyrogram.raw.all import layer
+from pyrogram import Client, idle
 from database.ia_filterdb import Media
 from database.users_chats_db import db
 from info import *
 from utils import temp
 from typing import Union, Optional, AsyncGenerator
-from pyrogram import types
 from Script import script 
 from datetime import date, datetime 
-import pytz
 from aiohttp import web
 from plugins import web_server
 from plugins.clone import restart_bots
 
-import asyncio
 from TechVJ.bot import TechVJBot
 from TechVJ.util.keepalive import ping_server
 from TechVJ.bot.clients import initialize_clients
@@ -52,7 +45,6 @@ async def start():
     print('\n')
     print('Initalizing Your Bot')
     bot_info = await TechVJBot.get_me()
-    TechVJBot.username = bot_info.username
     await initialize_clients()
     for name in files:
         with open(name) as a:
@@ -72,11 +64,10 @@ async def start():
     temp.BANNED_CHATS = b_chats
     await Media.ensure_indexes()
     me = await TechVJBot.get_me()
+    temp.BOT = TechVJBot
     temp.ME = me.id
     temp.U_NAME = me.username
     temp.B_NAME = me.first_name
-    TechVJBot.username = '@' + me.username
-    logging.info(f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) started on {me.username}.")
     logging.info(LOG_STR)
     logging.info(script.LOGO)
     tz = pytz.timezone('Asia/Kolkata')
@@ -100,4 +91,3 @@ if __name__ == '__main__':
         loop.run_until_complete(start())
     except KeyboardInterrupt:
         logging.info('Service Stopped Bye 👋')
-
