@@ -31,7 +31,7 @@ SPELL_CHECK = {}
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
-        try:
+   try:
         await message.react(emoji=random.choice(EMOJIS))
     except Exception:
         pass
