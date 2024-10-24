@@ -40,7 +40,7 @@ async def delete_all_referal_users(user_id):
     
 class Database:
 
-        default_setgs = {
+    default_setgs = {
         'button': SINGLE_BUTTON,
         'botpm': P_TTI_SHOW_OFF,
         'file_secure': PROTECT_CONTENT,
