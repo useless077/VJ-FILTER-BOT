@@ -74,7 +74,7 @@ async def start(client, message):
         ],[
             InlineKeyboardButton('⁉️ Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ ⁉️', url=t)
         ]]
-        k = await client.send_message(chat_id=message.from_user.id,text=f"<b>Get All Files in a Single Click!!!\n\n📂 ʟɪɴᴋ ➠ : {g}\n\n<i>Note: This message is deleted in 5 mins to avoid copyrights. Save the link to Somewhere else</i></b>", reply_markup=InlineKeyboardMarkup(btn))
+        k = await client.send_message(chat_id=message.from_user.id,text=f"<b>Get All Files in a Single Click!!!\n\n📂 ʟɪɴᴋ ➠ : {g}\n\n<i>Note: This message is deleted in 5 mins to avoid copyrights. Save the link to Somewhere else\n\nகுறிப்பு: பதிப்புரிமைகளைத் தவிர்க்க இந்தச் செய்தி 5 நிமிடங்களில் நீக்கப்படும். இணைப்பை வேறு எங்காவது சேமிக்கவும்</i></b>", reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(300)
         await k.edit("<b>Your message is successfully deleted!!!</b>")
         return
@@ -91,7 +91,7 @@ async def start(client, message):
         ],[
             InlineKeyboardButton('⁉️ Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ ⁉️', url=t)
         ]]
-        k = await client.send_message(chat_id=user,text=f"<b>📕Nᴀᴍᴇ ➠ : <code>{files.file_name}</code> \n\n🔗Sɪᴢᴇ ➠ : {get_size(files.file_size)}\n\n📂Fɪʟᴇ ʟɪɴᴋ ➠ : {g}\n\n<i>Note: This message is deleted in 20 mins to avoid copyrights. Save the link to Somewhere else</i></b>", reply_markup=InlineKeyboardMarkup(btn))
+        k = await client.send_message(chat_id=user,text=f"<b>📕Nᴀᴍᴇ ➠ : <code>{files.file_name}</code> \n\n🔗Sɪᴢᴇ ➠ : {get_size(files.file_size)}\n\n📂Fɪʟᴇ ʟɪɴᴋ ➠ : {g}\n\n<i>Note: This message is deleted in 20 mins to avoid copyrights. Save the link to Somewhere else\n\nகுறிப்பு: பதிப்புரிமைகளைத் தவிர்க்க இந்தச் செய்தி 20 நிமிடங்களில் நீக்கப்படும். இணைப்பை வேறு எங்காவது சேமிக்கவும்</i></b>", reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(1200)
         await k.edit("<b>Your message is successfully deleted!!!</b>")
         return
@@ -109,11 +109,17 @@ async def start(client, message):
             file_id = mg.file_id
             files_ = await get_file_details(vj_file_id)
             files1 = files_[0]
-            title = '@VJ_Botz  ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))
+            title = '@Townbus  ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))
             size=get_size(files1.file_size)
             f_caption=files1.caption
+            if CUSTOM_FILE_CAPTION:
+                try:
+                    f_caption=CUSTOM_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
+                except Exception as e:
+                    logger.exception(e)
+                    f_caption=f_caption
             if f_caption is None:
-                f_caption = f"@VJ_Botz  {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))}"
+                f_caption = f"@Townbus  {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files1.file_name.split()))}"
             if cd["update_channel_link"] != None:
                 up = cd["update_channel_link"]
                 button = [[
@@ -131,7 +137,7 @@ async def start(client, message):
                 reply_markup=reply_markup
             )
             filesarr.append(msg)
-        k = await client.send_message(chat_id = message.from_user.id, text=f"<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie Files/Videos will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this ALL Files/Videos to your Saved Messages and Start Download there</i></b>")
+        k = await client.send_message(chat_id = message.from_user.id, text=f"<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie Files/Videos will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this ALL Files/Videos to your Saved Messages and Start Download there</i></b>\n\n<b><u>❗️❗️❗️குறிப்பு❗️️❗️❗️</u></b>\n\nஇந்த மூவி கோப்புகள்/வீடியோக்கள் <b><u>10 நிமிடங்களில் நீக்கப்படும்</u> 🫥 <i></b>(பதிப்புரிமைச் சிக்கல்கள் காரணமாக)</i>.\n\n<b><i>இந்த எல்லா கோப்புகளையும்/வீடியோக்களையும் உங்கள் Saved Messages க்கு அனுப்பி, அங்கே பதிவிறக்கத்தை தொடங்கவும்</i></b>")
         await asyncio.sleep(600)
         for x in filesarr:
             await x.delete()
@@ -148,7 +154,7 @@ async def start(client, message):
             ],[
                 InlineKeyboardButton('⁉️ Hᴏᴡ Tᴏ Dᴏᴡɴʟᴏᴀᴅ ⁉️', url=t)
             ]]
-            k = await client.send_message(chat_id=message.from_user.id,text=f"<b>📕Nᴀᴍᴇ ➠ : <code>{files.file_name}</code> \n\n🔗Sɪᴢᴇ ➠ : {get_size(files.file_size)}\n\n📂Fɪʟᴇ ʟɪɴᴋ ➠ : {g}\n\n<i>Note: This message is deleted in 20 mins to avoid copyrights. Save the link to Somewhere else\n\nகுறிப்பு: பதிப்புரிமைகளைத் தவிர்க்க இந்தச் செய்தி 5 நிமிடங்களில் நீக்கப்படும். இணைப்பை வேறு எங்காவது சேமிக்கவும்</i></b>", reply_markup=InlineKeyboardMarkup(btn))
+            k = await client.send_message(chat_id=message.from_user.id,text=f"<b>📕Nᴀᴍᴇ ➠ : <code>{files.file_name}</code> \n\n🔗Sɪᴢᴇ ➠ : {get_size(files.file_size)}\n\n📂Fɪʟᴇ ʟɪɴᴋ ➠ : {g}\n\n<i>Note: This message is deleted in 20 mins to avoid copyrights. Save the link to Somewhere else\n\nகுறிப்பு: பதிப்புரிமைகளைத் தவிர்க்க இந்தச் செய்தி 20 நிமிடங்களில் நீக்கப்படும். இணைப்பை வேறு எங்காவது சேமிக்கவும்</i></b>", reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(1200)
             await k.edit("<b>Your message is successfully deleted!!!</b>")
             return
@@ -177,14 +183,19 @@ async def start(client, message):
             )
             filetype = msg.media
             file = getattr(msg, filetype.value)
-            title = '@VJ_Botz  ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), file.file_name.split()))
+            title = '@Townbus  ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), file.file_name.split()))
             size=get_size(file.file_size)
             f_caption = f"<code>{title}</code>"
+            if CUSTOM_FILE_CAPTION:
+                try:
+                    f_caption=CUSTOM_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='')
+                except:
+                    return
             await msg.edit_caption(
                 caption=f_caption,
                 reply_markup=reply_markup
             )
-            k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>",quote=True)
+            k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>\n\n<b><u>❗️❗️❗️குறிப்பு❗️️❗️❗️</u></b>\n\nஇந்த மூவி கோப்புகள்/வீடியோக்கள் <b><u>10 நிமிடங்களில் நீக்கப்படும்</u> 🫥 <i></b>(பதிப்புரிமைச் சிக்கல்கள் காரணமாக)</i>.\n\n<b><i>இந்த எல்லா கோப்புகளையும்/வீடியோக்களையும் உங்கள் Saved Messages க்கு அனுப்பி, அங்கே பதிவிறக்கத்தை தொடங்கவும்</i></b>",quote=True)
             await asyncio.sleep(600)
             await msg.delete()
             await k.edit_text("<b>Your File/Video is successfully deleted!!!</b>")
@@ -196,6 +207,12 @@ async def start(client, message):
     title = '@TownBus  ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))
     size=get_size(files.file_size)
     f_caption=files.caption
+    if CUSTOM_FILE_CAPTION:
+        try:
+            f_caption=CUSTOM_FILE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
+        except Exception as e:
+            logger.exception(e)
+            f_caption=f_caption
     if f_caption is None:
         f_caption = f"@TownBus  {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))}"
     if cd["update_channel_link"] != None:
@@ -217,7 +234,7 @@ async def start(client, message):
         protect_content=True if pre == 'filep' else False,
         reply_markup=reply_markup
     )
-    k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>",quote=True)
+    k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>\n\n<b><u>❗️❗️❗️குறிப்பு❗️️❗️❗️</u></b>\n\nஇந்த மூவி கோப்புகள்/வீடியோக்கள் <b><u>10 நிமிடங்களில் நீக்கப்படும்</u> 🫥 <i></b>(பதிப்புரிமைச் சிக்கல்கள் காரணமாக)</i>.\n\n<b><i>இந்த எல்லா கோப்புகளையும்/வீடியோக்களையும் உங்கள் Saved Messages க்கு அனுப்பி, அங்கே பதிவிறக்கத்தை தொடங்கவும்</i></b>",quote=True)
     await asyncio.sleep(600)
     await msg.delete()
     await k.edit_text("<b>Your File/Video is successfully deleted!!!</b>")
