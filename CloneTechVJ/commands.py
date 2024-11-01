@@ -282,9 +282,9 @@ async def reset_settings(client, message):
         await message.reply("**No Settings Found.**")
     else:
         data = {
-            'url': None,
-            'api': None,
-            'tutorial': None,
+            'url': SHORTLINK_URL,
+            'api': SHORTLINK_API,
+            'tutorial': TUTORIAL,
             'update_channel_link': None
         }
         await db.update_bot(me.id, data)
