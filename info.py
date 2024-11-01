@@ -97,8 +97,8 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 # Shortlink Info
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'tnshort.net')
 SHORTLINK_API = environ.get('SHORTLINK_API', 'eb0d3ac51fe147d90318fd1a3b2a9446a57bdf96')
-SHORTLINK_MODE = bool(environ.get('SHORTLINK_MODE', False))
-IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
+SHORTLINK_MODE = bool(environ.get('SHORTLINK_MODE', True))
+IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
 VERIFY = bool(environ.get('VERIFY', False))
 
 # Others
@@ -123,7 +123,7 @@ EMOJIS = [
 
 
                            # Don't Remove Credit @TamilBots
-                           # Subscribe YouTube Channel For Amazing Bot @Tech_VJ
+                           # Subscribe YouTube Channel For Amazing Bot @TamilBots
                            # Ask Doubt on telegram @Yaarulanee
 
 
@@ -158,6 +158,6 @@ LOG_STR += (f"MAX_LIST_ELM Found, long list will be shortened to first {MAX_LIST
 LOG_STR += f"Your current IMDB template is {IMDB_TEMPLATE}"
 
 
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit @TamilBots
+# Subscribe YouTube Channel For Amazing Bot @TamilBots
+# Ask Doubt on telegram @Yaarulanee
