@@ -26,7 +26,7 @@ BOT_TOKEN = environ.get('BOT_TOKEN', "")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 1800))
-PICS = (environ.get('PICS', 'https://graph.org/file/af80a182062fc26c589d8.jpg https://graph.org/file/8d495ddd0f48bd8020b51.jpg https://graph.org/file/1e335a03940be708a9407.jpg https://graph.org/file/4c0bc3b64ad493dc5f668.jpg')).split() #SAMPLE PIC
+PICS = (environ.get('PICS', 'https://graph.org/vTelegraphBot-11-04-5 https://envs.sh/jem.jpg https://envs.sh/jeX.jpg')).split() #SAMPLE PIC
 NOR_IMG = environ.get("NOR_IMG", "https://te.legra.ph/file/a27dc8fe434e6b846b0f8.jpg")
 MELCOW_VID = environ.get("MELCOW_VID", "https://t.me/saravanakrish/107")
 SPELL_IMG = environ.get("SPELL_IMG", "https://graph.org/file/789e3888ab16ce1a9a535.jpg")
