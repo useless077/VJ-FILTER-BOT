@@ -1063,9 +1063,9 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}")
         ])
 
-     btn.insert(0, [
-         InlineKeyboardButton("🤔Hᴏᴡ ᴛᴏ Dᴏᴡɴʟᴏᴀᴅ⚡", url=await get_tutorial(query.message.chat.id))
-     ])
+#     btn.insert(0, [
+#         InlineKeyboardButton("🤔Hᴏᴡ ᴛᴏ Dᴏᴡɴʟᴏᴀᴅ⚡", url=await get_tutorial(query.message.chat.id))
+#     ])
     if offset != "":
         try:
             if settings['max_btn']:
