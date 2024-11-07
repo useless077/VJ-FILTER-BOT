@@ -1462,41 +1462,42 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f_caption
         if f_caption is None:
             f_caption = f"{files.file_name}"
-        try:
-            msg = await client.send_cached_media(
-                chat_id=AUTH_CHANNEL,
-                file_id=file_id,
-                caption=f'<b>Hai 👋 {query.from_user.mention}</b> 😍\n\n<code>[TamilBots] {title}</code>\n\n⚠️ <i>This file will be deleted from here within 5 minute as it has copyright ... !!!</i>\n\n<i>பதிப்புரிமை காரணமாக, கோப்பு 5 நிமிடங்களில் இங்கிருந்து அகற்றப்படும், எனவே இங்கிருந்து வேறு இடத்திற்கு மாற்றிய பின் பதிவிறக்கவும்!</i>\n\n<i><b>⚡ Powered by {query.message.chat.title}</b></i>',
-                protect_content=True if settings["file_secure"] else False,
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📢 Channel", url=f'https://t.me/TownBus'),  # we download Link
-                                                    InlineKeyboardButton('📽️ Group', url=f'https://t.me/Moviediscussion24x7')]])  # web stream Link
-            )
-            msg1 = await query.message.reply_text(
-                chat_id=query.message.chat.id,
-                text=f"<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>[TownBus] {title}</code>\n\n<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>",
-                quote=True,
+        await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
+#        try:
+#            msg = await client.send_cached_media(
+#                chat_id=AUTH_CHANNEL,
+#                file_id=file_id,
+#                caption=f'<b>Hai 👋 {query.from_user.mention}</b> 😍\n\n<code>[TamilBots] {title}</code>\n\n⚠️ <i>This file will be deleted from here within 5 minute as it has copyright ... !!!</i>\n\n<i>பதிப்புரிமை காரணமாக, கோப்பு 5 நிமிடங்களில் இங்கிருந்து அகற்றப்படும், எனவே இங்கிருந்து வேறு இடத்திற்கு மாற்றிய பின் பதிவிறக்கவும்!</i>\n\n<i><b>⚡ Powered by {query.message.chat.title}</b></i>',
+#                protect_content=True if settings["file_secure"] else False,
+#                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📢 Channel", url=f'https://t.me/TownBus'),  # we download Link
+#                                                    InlineKeyboardButton('📽️ Group', url=f'https://t.me/Moviediscussion24x7')]])  # web stream Link
+#            )
+#            msg1 = await query.message.reply_text(
+#                chat_id=query.message.chat.id,
+#                text=f"<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n<b>📂 Fɪʟᴇ Nᴀᴍᴇ</b> : <code>[TownBus] {title}</code>\n\n<b>⚙️ Fɪʟᴇ Sɪᴢᴇ</b> : <b>{size}</b>",
+#                quote=True,
  #               disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton('📥 Download 📥 ', url = msg.link)
-                        ],                       
-                        [
-                            InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/Tamilmovies5k')
-                        ]
-                    ]
-                )
-            )
-            await query.answer("Check Out The Chat", show_alert=True)
-            await asyncio.sleep(300)
-            await msg1.delete()
-            await msg.delete()
+#                reply_markup=InlineKeyboardMarkup(
+#                    [
+#                        [
+#                            InlineKeyboardButton('📥 Download 📥 ', url = msg.link)
+#                        ],                       
+#                        [
+#                            InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/Tamilmovies5k')
+#                        ]
+#                    ]
+#                )
+#            )
+#            await query.answer("Check Out The Chat", show_alert=True)
+#            await asyncio.sleep(300)
+#            await msg1.delete()
+#            await msg.delete()
    #         del msg1, msg
-        except Exception as e:
-            logger.exception(e, exc_info=True)
-            await query.answer(f"Encountering Issues", show_alert=True)
-        else:    
-            await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
+#        except Exception as e:
+#            logger.exception(e, exc_info=True)
+#            await query.answer(f"Encountering Issues", show_alert=True)
+#        else:    
+#            await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
 
     
     elif query.data.startswith("checksub"):
