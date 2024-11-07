@@ -1461,7 +1461,73 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f_caption
         if f_caption is None:
             f_caption = f"{files.file_name}"
-        await query.answer(url=f"https://telegram.me/{temp.U_NAME}?start=file_{file_id}")
+#New lines added for redirect to channel
+        try:
+            if AUTH_CHANNEL and not await is_subscribed(client, query):
+                if clicked == typed:
+                    await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                    return
+                else:
+                    await query.answer(
+                        f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !",
+                        show_alert=True)
+            elif settings['botpm']:
+                if clicked == typed:
+                    await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                    return
+                else:
+                    await query.answer(
+                        f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !",
+                        show_alert=True)
+            else:
+                if clicked == typed:
+                    file_send = await client.send_cached_media(
+                        chat_id=FILE_CHANNEL,
+                        file_id=file_id,
+                        caption=script.CHANNEL_CAP.format(query.from_user.mention, title, query.message.chat.title),
+                        protect_content=True if ident == "filep" else False,
+                        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📢 Channel", url=f'https://t.me/TamilMovies5k'),  # we download Link
+                                                            InlineKeyboardButton('📽️ Group', url=f'https://t.me/Moviediscussion24x7')]])  # web stream Link
+  #                      reply_markup=InlineKeyboardMarkup(
+  #                          [
+  #                              [
+  #                                  InlineKeyboardButton(f'🇮🇳 Mᴀʟ', 'fmal'),
+  #                                  InlineKeyboardButton(f'🇮🇳 Tᴀᴍ', 'ftam'),
+  #                                  InlineKeyboardButton(f'🇮🇳 Hɪɴ', 'fhin')
+  #                              ], [
+  #                              InlineKeyboardButton("📍 ᴄʜᴀɴɴᴇʟ 📍", url=(CHNL_LNK))
+  #                          ]
+  #                          ]
+  #                      )
+                    )
+                    sara_tgx = await query.message.reply_text(
+                        script.FILE_MSG.format(query.from_user.mention, title, size),
+                        parse_mode=enums.ParseMode.HTML,
+                        reply_markup=InlineKeyboardMarkup(
+                            [
+                                [
+                                    InlineKeyboardButton('📥 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽 𝖫𝗂𝗇𝗄 📥 ', url=file_send.link)
+                                ], [
+                                InlineKeyboardButton("⚠️ 𝖢𝖺𝗇'𝗍 𝖠𝖼𝖼𝖾𝗌𝗌 ❓ 𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾 ⚠️", url=(FILE_CHANNEL))
+                            ]
+                            ]
+                        )
+                    )
+                    if settings['auto_delete']:
+                        await asyncio.sleep(600)
+                        await sara_tgx.delete()
+                        await file_send.delete()
+                else:
+                    await query.answer(
+                        f"Hᴇʏ {query.from_user.first_name}, Tʜɪs Is Nᴏᴛ Yᴏᴜʀ Mᴏᴠɪᴇ Rᴇǫᴜᴇsᴛ. Rᴇǫᴜᴇsᴛ Yᴏᴜʀ's !",
+                        show_alert=True)
+                await query.answer('Cʜᴇᴄᴋ PM, I ʜᴀᴠᴇ sᴇɴᴛ ғɪʟᴇs ɪɴ PM', show_alert=True)
+        except UserIsBlocked:
+            await query.answer('𝐔𝐧𝐛𝐥𝐨𝐜𝐤 𝐭𝐡𝐞 𝐛𝐨𝐭 𝐦𝐚𝐡𝐧 !', show_alert=True)
+        except PeerIdInvalid:
+            await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+        except Exception as e:
+            await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
 #        try:
 #            msg = await client.send_cached_media(
 #                chat_id=AUTH_CHANNEL,
