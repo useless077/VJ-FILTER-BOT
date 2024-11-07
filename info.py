@@ -49,6 +49,11 @@ INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
 FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).split()]
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 
+#Redirect to Channel
+#Must change this link to work redirect (FILE_FORWORD)
+FILE_FORWARD = environ.get('FILE_FORWARD',"https://t.me/tamil5k")
+FILE_CHANNEL = int(environ.get('FILE_CHANNEL', 0))
+
 # MongoDB information
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://tamilmovie:tamilmovie@cluster0.lxatf.mongodb.net/tamilmovie?retryWrites=true&w=majority")
 DATABASE_NAME = environ.get('DATABASE_NAME', "TamilBots")
