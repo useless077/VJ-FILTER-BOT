@@ -15,7 +15,7 @@ headers = {
     "Referer": "https://saveig.app/en",
 }
 @Client.on_message(filters.regex(r'https?://.*instagram[^\s]+') & filters.incoming)
-async def link_handler(Mbot, message):
+async def link_handler(Client, message):
     link = message.matches[0].group(0)
     global headers
     try:
@@ -102,8 +102,8 @@ async def link_handler(Mbot, message):
         except Exception as e:
           #  await message.reply_text(f"https://ddinstagram.com{content_value}")
             if LOG_GROUP:
-               await Mbot.send_message(LOG_GROUP,f"Instagram {e} {link}")
-               await Mbot.send_message(LOG_GROUP, traceback.format_exc())
+               await Client.send_message(LOG_GROUP,f"Instagram {e} {link}")
+               await Client.send_message(LOG_GROUP, traceback.format_exc())
           #     await message.reply(tracemsg)
             ##optinal 
             await message.reply(f"400: Sorry, Unable To Find It  try another or report it  to @TamilBots or support chat https://t.me/TammilSupport")
