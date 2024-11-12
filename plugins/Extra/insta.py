@@ -23,9 +23,9 @@ async def link_handler(Client, message):
         url= link.replace("instagram.com","ddinstagram.com")
         url=url.replace("==","%3D%3D")
         if url.endswith("="):
-           dump_file=await message.reply_video(url[:-1],caption="ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ @mrtgcoderbot")
+           dump_file=await message.reply_video(url[:-1],caption="ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ @TamilBots")
         else:
-            dump_file=await message.reply_video(url,caption="ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ @mrtgcoderbot")
+            dump_file=await message.reply_video(url,caption="ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ @TamilBots")
         if 'dump_file' in locals():
            await dump_file.forward(DUMP_GROUP)
         await m.delete()
