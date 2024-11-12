@@ -16,7 +16,8 @@ aiohttp
 #Telethroid==0.0.10 
 PyLeaves==1.0.2 
   
-  
+#Ai search
+google-generativeai
  
 #---ytdl----# 
 ffmpeg
