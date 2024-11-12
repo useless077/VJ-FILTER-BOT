@@ -35,7 +35,7 @@ async def git(bot, message):
 
 <b>Open Issues :</b> <i>{qw.get("open_issues")}</i>
 
-<b>Powered by :</b> @VJ_Botz
+<b>Powered by :</b> @TamilBots
 
 """
         if qw.get("description"):
