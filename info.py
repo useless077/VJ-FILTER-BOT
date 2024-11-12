@@ -83,7 +83,7 @@ VERIFY_TUTORIAL = environ.get('VERIFY_TUTORIAL', 'https://t.me/tamilmoviechat/28
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'TamilSupport') # Support Chat Link Without https:// or @
 
 #Ai 
-GOOGLE_API_KEY = os.environ.get('API_KEY', '')
+GOOGLE_API_KEY = os.environ.get('API_KEY', 'AIzaSyApG1zeFiXnx6DhGUPIIOpSeEXHuwNnW8o')
 
 # True Or False
 AI_SPELL_CHECK = bool(environ.get('AI_SPELL_CHECK', True))
