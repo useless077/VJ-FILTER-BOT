@@ -81,6 +81,9 @@ TUTORIAL = environ.get('TUTORIAL', 'https://t.me/tamilmoviechat/28')
 VERIFY_TUTORIAL = environ.get('VERIFY_TUTORIAL', 'https://t.me/tamilmoviechat/28')
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'TamilSupport') # Support Chat Link Without https:// or @
 
+#Ai 
+GOOGLE_API_KEY = os.environ.get('API_KEY', '')
+
 # True Or False
 AI_SPELL_CHECK = bool(environ.get('AI_SPELL_CHECK', True))
 PM_SEARCH = bool(environ.get('PM_SEARCH', False)) # In Pm Search Currently Spell Check Doesn't Work.
