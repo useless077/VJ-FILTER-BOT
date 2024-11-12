@@ -144,7 +144,15 @@ my features Stay here new features coming soon...
   
  ./video - This command usage any YouTube video download hd [<code>example /video https://youtu.be/Aiue8PMuD-k</code>]
 
-./font - This command usage stylish and cool font generator [<code>example /font hi</code>]"""
+./font - This command usage stylish and cool font generator [<code>example /font hi</code>]
+
+./ai {ᴜʀ ǫᴜᴇsᴛɪᴏɴ} ᴄʀᴇᴅɪᴛs @TamilBots
+
+./send Yᴏᴜ ᴄᴀɴ ᴄᴏɴᴛᴀᴄᴛ ʙᴏᴛ ᴀᴅᴍɪɴ ᴛʜʀᴏᴜɢʜ ʙᴏᴛ ᴜsɪɴɢ /send (ᴜʀ_ᴍᴇssᴀɢᴇ)</code>.
+
+./torrent ʏᴏᴜ ᴄᴀɴ sᴇᴀʀᴄʜ ᴀɴᴅ ᴇxᴘʟᴏʀᴇ ᴛᴏʀʀᴇɴᴛs ᴡɪᴛʜɪɴ Tᴇʟᴇɢʀᴀᴍ. 
+
+.sᴇɴᴅ ɪɴsᴛᴀɢʀᴀᴍ ʀᴇᴇʟ,sᴛᴏʀɪᴇs ᴀɴᴅ ᴘᴏsᴛ ʟɪɴᴋ ᴛᴏ ᴛʜɪs ʙᴏᴛ, ғᴏʀ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ, ᴘᴜʙʟɪᴄ ᴏɴʟʏ"""
 
 
     ADMIN_TXT = """ʜᴇʟᴘ: Aᴅᴍɪɴ Mᴏᴅs
@@ -793,6 +801,10 @@ Example:- /set_caption 📕 File Name: {filename}
 
 /stream - ɢᴇᴛ sᴛʀᴇᴀᴍᴀʙʟᴇ ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅᴀʙʟᴇ ʟɪɴᴋ ᴏғ ᴀɴʏ ғɪʟᴇ</b>"""
 
+    REPORT_MSG = """ʀᴇᴘᴏʀᴛ ᴛᴏ ᴀᴅᴍɪɴs"""
+    
+    REPORT_TXT = """@admins, @admins, /report. ғᴏʀ ʀᴇᴘᴏʀᴛ ᴛᴏ ᴀᴅᴍɪɴs(ᴡᴏʀᴋ ᴏɴʟʏ ɪɴ  ɢʀᴏᴜᴘ)"""
+    
 
 # Don't Remove Credit @VJ_Botz
 # Subscribe YouTube Channel For Amazing Bot @Tech_VJ
