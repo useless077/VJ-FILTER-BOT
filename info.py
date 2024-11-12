@@ -84,6 +84,7 @@ SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'TamilSupport') # Support Chat Link W
 
 #Ai 
 GOOGLE_API_KEY = os.environ.get('API_KEY', 'AIzaSyApG1zeFiXnx6DhGUPIIOpSeEXHuwNnW8o')
+OPENAI_API_KEY os.environ.get(OPENAI_API_KEY, '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')
 
 # True Or False
 AI_SPELL_CHECK = bool(environ.get('AI_SPELL_CHECK', True))
