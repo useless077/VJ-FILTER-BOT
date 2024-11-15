@@ -142,7 +142,7 @@ my features Stay here new features coming soon...
   
  ./tts - <code>This command usage text to voice converter</code> 
   
- ./video - This command usage any YouTube video download hd [<code>example /video https://youtu.be/Aiue8PMuD-k</code>]
+ ./video - This command usage any YouTube video download hd [<code>example /video https://youtu.be/TamilBots</code>]
 
 ./font - This command usage stylish and cool font generator [<code>example /font hi</code>]
 
@@ -155,6 +155,57 @@ my features Stay here new features coming soon...
 .sᴇɴᴅ ɪɴsᴛᴀɢʀᴀᴍ ʀᴇᴇʟ,sᴛᴏʀɪᴇs ᴀɴᴅ ᴘᴏsᴛ ʟɪɴᴋ ᴛᴏ ᴛʜɪs ʙᴏᴛ, ғᴏʀ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ, ᴘᴜʙʟɪᴄ ᴏɴʟʏ"""
 
 
+    FUN_TXT = """ʜᴇʟᴘ: 🇫​​🇺​​🇳​ ​🇲​ᴏᴅᴜʟᴇ​🇸​
+<b>ɴᴏᴛᴇ:</b>
+my features Stay here new features coming soon...  
+
+<b>✯ Maintained by : <a href=https://t.me/Yaarulanee>✭ Iϻsαi🎭Arⱥ𝖘aภ ✭</a></b>
+  
+<b>✯ Join here : <a href=https://t.me/Townbus>☢Join my updateds☢</a></b> 
+    
+•/throw or /dart - This command usage to get dart emoji.
+
+•/roll or /dice - This command usage to get dice emoji.
+
+•/luck or /cownd - try this to know your luck.
+
+•/goal or /shoot - This command usage to get goal emoji.
+
+•/runs - This command usage to get run string.
+
+•/react - This command usage to give reaction
+
+•/abuse - This command usage to abuse some one. (Tag and reply with this command)
+
+•/joke - This command usage to get tamil joke
+
+•/sing - This command usage to get tamil random song lines
+
+•/truth or /dare - This command usage to play truth or dare"""
+
+    DOWN_TXT = """ʜᴇʟᴘ: ᴅᴏᴡɴʟᴏᴀᴅ  Mᴏᴅs
+<b>ɴᴏᴛᴇ:</b>
+my features Stay here new features coming soon...  
+
+<b>✯ Maintained by : <a href=https://t.me/Yaarulanee>✭ Iϻsαi🎭Arⱥ𝖘aภ ✭</a></b>
+  
+<b>✯ Join here : <a href=https://t.me/Townbus>☢Join my updateds☢</a></b> 
+
+•/song - Download any song [<code>example /song vaa vaathi song</code>]
+ 
+•/video - This command usage any YouTube video download hd [<code>example /video https://youtu.be/TamilBots</code>]
+
+•/ringtone - Download any ringtone from this command
+
+• sᴇɴᴅ ꜰᴀᴄᴇʙᴏᴏᴋ ʀᴇᴇʟ,sᴛᴏʀɪᴇs ᴀɴᴅ ᴘᴏsᴛ ʟɪɴᴋ ᴛᴏ ᴛʜɪs ʙᴏᴛ, ғᴏʀ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ, ᴘᴜʙʟɪᴄ ᴏɴʟʏ
+ 
+•sᴇɴᴅ ɪɴsᴛᴀɢʀᴀᴍ ʀᴇᴇʟ,sᴛᴏʀɪᴇs ᴀɴᴅ ᴘᴏsᴛ ʟɪɴᴋ ᴛᴏ ᴛʜɪs ʙᴏᴛ, ғᴏʀ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ, ᴘᴜʙʟɪᴄ ᴏɴʟʏ
+ 
+•sᴇɴᴅ ᴛᴡɪᴛᴛᴇʀ ᴘᴏsᴛ ʟɪɴᴋ ᴛᴏ ᴛʜɪs ʙᴏᴛ, ғᴏʀ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ, ᴘᴜʙʟɪᴄ ᴏɴʟʏ
+ 
+•sᴇɴᴅ ᴘɪɴᴛᴇʀᴇꜱᴛ ᴘᴏsᴛ ʟɪɴᴋ ᴛᴏ ᴛʜɪs ʙᴏᴛ, ғᴏʀ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ, ɪᴍᴀɢᴇ ᴏɴʟʏ"""
+
+    
     ADMIN_TXT = """ʜᴇʟᴘ: Aᴅᴍɪɴ Mᴏᴅs
 <b>ɴᴏᴛᴇ:</b>
 Tʜɪs Mᴏᴅᴜʟᴇ Oɴʟʏ Wᴏʀᴋs Fᴏʀ Mʏ Aᴅᴍɪɴs
