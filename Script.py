@@ -127,22 +127,23 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
     EXTRAMOD_TXT = """ʜᴇʟᴘ: Exᴛʀᴀ Mᴏᴅᴜʟᴇs
 <b>ɴᴏᴛᴇ:</b>
 my features Stay here new features coming soon...  
- <b>✯ Maintained by : <a href=https://t.me/Yaarulanee>✭ Iϻsαi🎭Arⱥ𝖘aภ ✭</a></b>
+ 
+<b>✯ Maintained by : <a href=https://t.me/Yaarulanee>✭ Iϻsαi🎭Arⱥ𝖘aภ ✭</a></b>
   
- <b>✯ Join here : <a href=https://t.me/Townbus>☢Join my updateds☢</a></b> 
+<b>✯ Join here : <a href=https://t.me/Townbus>☢Join my updateds☢</a></b> 
   
- ./id - <code>ɢᴇᴛ ɪᴅ ᴏꜰ ᴀ ꜱᴘᴇᴄɪꜰɪᴇᴅ ᴜꜱᴇʀ.</ 
+./id - <code>ɢᴇᴛ ɪᴅ ᴏꜰ ᴀ ꜱᴘᴇᴄɪꜰɪᴇᴅ ᴜꜱᴇʀ.</ 
  code> 
   
- ./info  - <code>ɢᴇᴛ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴜꜱᴇʀ.</code> 
+./info  - <code>ɢᴇᴛ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴜꜱᴇʀ.</code> 
   
- ./song - Download any song [<code>example /song vaa vaathi song</code>] 
+./song - Download any song [<code>example /song vaa vaathi song</code>] 
   
- ./telegraph - <code>Telegraph generator sen under 5MB video or photo I give telegraph link</code> 
+./telegraph - <code>Telegraph generator sen under 5MB video or photo I give telegraph link</code> 
   
- ./tts - <code>This command usage text to voice converter</code> 
+./tts - <code>This command usage text to voice converter</code> 
   
- ./video - This command usage any YouTube video download hd [<code>example /video https://youtu.be/TamilBots</code>]
+./video - This command usage any YouTube video download hd [<code>example /video https://youtu.be/TamilBots</code>]
 
 ./font - This command usage stylish and cool font generator [<code>example /font hi</code>]
 
@@ -150,10 +151,7 @@ my features Stay here new features coming soon...
 
 ./send Yᴏᴜ ᴄᴀɴ ᴄᴏɴᴛᴀᴄᴛ ʙᴏᴛ ᴀᴅᴍɪɴ ᴛʜʀᴏᴜɢʜ ʙᴏᴛ ᴜsɪɴɢ /send (ᴜʀ_ᴍᴇssᴀɢᴇ)</code>.
 
-./torrent ʏᴏᴜ ᴄᴀɴ sᴇᴀʀᴄʜ ᴀɴᴅ ᴇxᴘʟᴏʀᴇ ᴛᴏʀʀᴇɴᴛs ᴡɪᴛʜɪɴ Tᴇʟᴇɢʀᴀᴍ. 
-
-.sᴇɴᴅ ɪɴsᴛᴀɢʀᴀᴍ ʀᴇᴇʟ,sᴛᴏʀɪᴇs ᴀɴᴅ ᴘᴏsᴛ ʟɪɴᴋ ᴛᴏ ᴛʜɪs ʙᴏᴛ, ғᴏʀ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ, ᴘᴜʙʟɪᴄ ᴏɴʟʏ"""
-
+./torrent ʏᴏᴜ ᴄᴀɴ sᴇᴀʀᴄʜ ᴀɴᴅ ᴇxᴘʟᴏʀᴇ ᴛᴏʀʀᴇɴᴛs ᴡɪᴛʜɪɴ Tᴇʟᴇɢʀᴀᴍ"""
 
     FUN_TXT = """ʜᴇʟᴘ: 🇫​​🇺​​🇳​ ​🇲​ᴏᴅᴜʟᴇ​🇸​
 <b>ɴᴏᴛᴇ:</b>
