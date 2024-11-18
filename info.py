@@ -108,7 +108,7 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'tnshort.net')
 SHORTLINK_API = environ.get('SHORTLINK_API', 'eb0d3ac51fe147d90318fd1a3b2a9446a57bdf96')
 SHORTLINK_MODE = bool(environ.get('SHORTLINK_MODE', True))
-IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
+IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
 VERIFY = bool(environ.get('VERIFY', False))
 
 # Others
