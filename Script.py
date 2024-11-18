@@ -341,7 +341,7 @@ Nᴀᴍᴇ - {}"""
 ▰▱▰▱▰▱▰▱▰▱▰▱▰▱ 
 🎗️ʝσιи 🎗️ ѕнαяє🎗️ ѕυρρσят🎗️ 
 
-📥 ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ @TGMovieProBot</b>""" 
+📥 ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ @TownBus</b>""" 
 
     IMDB_TEMPLATE_TXT = """
 <b>Query: {qurey}
