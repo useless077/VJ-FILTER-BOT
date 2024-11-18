@@ -2411,6 +2411,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         total = await Media.count_documents()
         users = await db.total_users_count()
         chats = await db.total_chat_count()
+        premium = await db.all_premium_users()
         monsize = await db.get_db_size()
         free = 536870912 - monsize
         monsize = get_size(monsize)
@@ -2435,6 +2436,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         total = await Media.count_documents()
         users = await db.total_users_count()
         chats = await db.total_chat_count()
+        premium = await db.all_premium_users()
         monsize = await db.get_db_size()
         free = 536870912 - monsize
         monsize = get_size(monsize)
