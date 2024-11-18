@@ -820,16 +820,6 @@ async def settings(client, message):
             ],
             [
                 InlineKeyboardButton(
-                    'Redirect To',
-                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',
-                ),
-                InlineKeyboardButton(
-                    '👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
-                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',
-                ),
-            ],
-            [
-                InlineKeyboardButton(
                     'Fɪʟᴇ Sᴇɴᴅ Mᴏᴅᴇ',
                     callback_data=f'setgs#botpm#{settings["botpm"]}#{grp_id}',
                 ),
@@ -908,16 +898,16 @@ async def settings(client, message):
                     callback_data=f'setgs#max_btn#{settings["max_btn"]}#{grp_id}',
                 ),
             ],
-            [
-                InlineKeyboardButton(
-                    'ShortLink',
-                    callback_data=f'setgs#is_shortlink#{settings["is_shortlink"]}#{grp_id}',
-                ),
-                InlineKeyboardButton(
-                    '✔ Oɴ' if settings["is_shortlink"] else '✘ Oғғ',
-                    callback_data=f'setgs#is_shortlink#{settings["is_shortlink"]}#{grp_id}',
-                ),
-            ],
+  #          [
+  #              InlineKeyboardButton(
+  #                  'ShortLink',
+  #                  callback_data=f'setgs#is_shortlink#{settings["is_shortlink"]}#{grp_id}',
+  #              ),
+  #              InlineKeyboardButton(
+  #                  '✔ Oɴ' if settings["is_shortlink"] else '✘ Oғғ',
+  #                  callback_data=f'setgs#is_shortlink#{settings["is_shortlink"]}#{grp_id}',
+  #              ),
+  #          ],
         ]
     else:
         buttons = [
@@ -929,16 +919,6 @@ async def settings(client, message):
                 InlineKeyboardButton(
                     'Bᴜᴛᴛᴏɴ' if settings["button"] else 'Tᴇxᴛ',
                     callback_data=f'setgs#button#{settings["button"]}#{grp_id}',
-                ),
-            ],
-            [
-                InlineKeyboardButton(
-                    'Redirect To',
-                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',
-                ),
-                InlineKeyboardButton(
-                    '👤 PM' if settings["redirect_to"] == "PM" else '📄 Chat',
-                    callback_data=f'setgs#redirect_to#{settings["redirect_to"]}#{grp_id}',
                 ),
             ],
             [
