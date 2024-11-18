@@ -56,6 +56,7 @@ FILE_FORWARD = environ.get('FILE_FORWARD',"https://t.me/tamil5k")
 FILE_CHANNEL = int(environ.get('FILE_CHANNEL', 0))
 
 # MongoDB information
+SECONDDB_URI = environ.get('SECONDDB_URI', None)
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://tamilmovie:tamilmovie@cluster0.lxatf.mongodb.net/tamilmovie?retryWrites=true&w=majority")
 DATABASE_NAME = environ.get('DATABASE_NAME', "TamilBots")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
