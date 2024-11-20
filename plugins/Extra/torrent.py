@@ -1,3 +1,8 @@
+# Don't Remove Credit @TamilBots
+# Subscribe YouTube Channel For Amazing Bot @Tamilbots
+# Ask Doubt on telegram @TamilSupport
+
+
 import asyncio
 from pyrogram import Client, filters
 import requests
