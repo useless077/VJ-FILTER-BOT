@@ -8,10 +8,10 @@ from pyrogram import Client, filters, types
 ​
 # Initialize your bot with the proper API credentials
 ​
-import config
+# import config
 ​
 PLAY_HT_API_KEY = "3q5ZzebQQ1NbzDMRzzNmTcQ4eV63"
-PLAY_HT_USER_ID = "Tamilmovie"
+PLAY_HT_USER_ID = "JWjv1QBluMRol63S1y3oi0PbngA2"
 ​
 # Define the endpoint URL
 url = "https://api.play.ht/api/v2/tts/stream"
@@ -43,7 +43,7 @@ voices = {
 async def voice(_, message):
     Usage = "Reply to a message with the text you want to convert to voice."
     user_id = message.from_user.id
-    if not user_id == config.OWNER_ID and user_id in temp:
+    if not user_id == 2063915639 and user_id in temp:
         count = temp.count(user_id)
         if count >= 7:
             return await message.reply(
