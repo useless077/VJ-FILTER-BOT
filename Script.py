@@ -126,11 +126,11 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
 
     EXTRAMOD_TXT = """ʜᴇʟᴘ: Exᴛʀᴀ Mᴏᴅᴜʟᴇs
 <b>ɴᴏᴛᴇ:</b>
-my features Stay here new features coming soon...  
+Sᴛᴀʏ ʜᴇʀᴇ ɴᴇᴡ ғᴇᴀᴛᴜʀᴇs ᴄᴏᴍɪɴɢ sᴏᴏɴ...  
  
 <b>✯ Maintained by : <a href=https://t.me/Yaarulanee>✭ Iϻsαi🎭Arⱥ𝖘aภ ✭</a></b>
   
-<b>✯ Join here : <a href=https://t.me/Townbus>☢Join my updateds☢</a></b> 
+<b>✯ Join here : <a href=https://t.me/Townbus>🌟 ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 🌟</a></b> 
   
 ./id - <code>ɢᴇᴛ ɪᴅ ᴏꜰ ᴀ ꜱᴘᴇᴄɪꜰɪᴇᴅ ᴜꜱᴇʀ.</ 
  code> 
@@ -155,11 +155,11 @@ my features Stay here new features coming soon...
 
     FUN_TXT = """ʜᴇʟᴘ: 🇫​​🇺​​🇳​ ​🇲​ᴏᴅᴜʟᴇ​🇸​
 <b>ɴᴏᴛᴇ:</b>
-my features Stay here new features coming soon...  
+Sᴛᴀʏ ʜᴇʀᴇ ɴᴇᴡ ғᴇᴀᴛᴜʀᴇs ᴄᴏᴍɪɴɢ sᴏᴏɴ...  
 
 <b>✯ Maintained by : <a href=https://t.me/Yaarulanee>✭ Iϻsαi🎭Arⱥ𝖘aภ ✭</a></b>
   
-<b>✯ Join here : <a href=https://t.me/Townbus>☢Join my updateds☢</a></b> 
+<b>✯ Join here : <a href=https://t.me/Townbus>🌟 ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 🌟</a></b> 
     
 •/throw or /dart - This command usage to get dart emoji.
 
@@ -183,11 +183,11 @@ my features Stay here new features coming soon...
 
     DOWN_TXT = """ʜᴇʟᴘ: ᴅᴏᴡɴʟᴏᴀᴅ  Mᴏᴅs
 <b>ɴᴏᴛᴇ:</b>
-my features Stay here new features coming soon...  
+Sᴛᴀʏ ʜᴇʀᴇ ɴᴇᴡ ғᴇᴀᴛᴜʀᴇs ᴄᴏᴍɪɴɢ sᴏᴏɴ...  
 
 <b>✯ Maintained by : <a href=https://t.me/Yaarulanee>✭ Iϻsαi🎭Arⱥ𝖘aภ ✭</a></b>
   
-<b>✯ Join here : <a href=https://t.me/Townbus>☢Join my updateds☢</a></b> 
+<b>✯ Join here : <a href=https://t.me/Townbus>🌟 ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ 🌟</a></b> 
 
 • sᴇɴᴅ ꜰᴀᴄᴇʙᴏᴏᴋ ʀᴇᴇʟ,sᴛᴏʀɪᴇs ᴀɴᴅ ᴘᴏsᴛ ʟɪɴᴋ ᴛᴏ ᴛʜɪs ʙᴏᴛ, ғᴏʀ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ, ᴘᴜʙʟɪᴄ ᴏɴʟʏ
  
@@ -224,7 +224,7 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
     STATUS_TXT = """<b>★ Tᴏᴛᴀʟ Fɪʟᴇs: <code>{}</code>
 ★ Tᴏᴛᴀʟ Usᴇʀs: <code>{}</code>
 ★ Tᴏᴛᴀʟ Cʜᴀᴛs: <code>{}</code>
-★ Premium Users: <code>{}</code>
+★ Pʀᴇᴍɪᴜᴍ Usᴇʀs: <code>{}</code>
 ★ Usᴇᴅ Sᴛᴏʀᴀɢᴇ: <code>{}</code>
 ★ Fʀᴇᴇ Sᴛᴏʀᴀɢᴇ: <code>{}</code></b>"""
 
