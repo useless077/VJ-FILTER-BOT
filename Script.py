@@ -124,7 +124,7 @@ Cᴏᴍᴍᴀɴᴅs Aɴᴅ Usᴀɢᴇ:
 # Subscribe YouTube Channel For Amazing Bot @Tech_VJ
 # Ask Doubt on telegram @KingVJ01
 
-    EXTRAMOD_TXT = """ʜᴇʟᴘ: Exᴛʀᴀ Mᴏᴅᴜʟᴇs
+    EXTRA_TXT = """ʜᴇʟᴘ: Exᴛʀᴀ Mᴏᴅᴜʟᴇs
 <b>ɴᴏᴛᴇ:</b>
 Sᴛᴀʏ ʜᴇʀᴇ ɴᴇᴡ ғᴇᴀᴛᴜʀᴇs ᴄᴏᴍɪɴɢ sᴏᴏɴ...  
  
@@ -136,15 +136,11 @@ Sᴛᴀʏ ʜᴇʀᴇ ɴᴇᴡ ғᴇᴀᴛᴜʀᴇs ᴄᴏᴍɪɴɢ sᴏᴏɴ...
  code> 
   
 ./info  - <code>ɢᴇᴛ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴀ ᴜꜱᴇʀ.</code> 
-  
-./song - Download any song [<code>example /song vaa vaathi song</code>] 
-  
+    
 ./telegraph - <code>Telegraph generator sen under 5MB video or photo I give telegraph link</code> 
   
 ./tts - <code>This command usage text to voice converter</code> 
   
-./video - This command usage any YouTube video download hd [<code>example /video https://youtu.be/TamilBots</code>]
-
 ./font - This command usage stylish and cool font generator [<code>example /font hi</code>]
 
 ./ai {ᴜʀ ǫᴜᴇsᴛɪᴏɴ} ᴄʀᴇᴅɪᴛs @TamilBots
