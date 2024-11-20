@@ -10,7 +10,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
-from utils import get_size, is_subscribed, pub_is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings, get_shortlink, get_tutorial, send_all, get_cap, humanbytes
+from utils import get_size, is_subscribed, pub_is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings, get_shortlink, get_tutorial, send_all, get_cap, humanbytes, is_check_admin
 from database.users_chats_db import db
 from database.ia_filterdb import Media, get_file_details, get_search_results, get_bad_files
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, make_inactive
@@ -2417,7 +2417,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         monsize = get_size(monsize)
         free = get_size(free)
         await query.message.edit_text(
-            text=script.STATUS_TXT.format(total, users, chats, monsize, free),
+            text=script.STATUS_TXT.format(total, users, premium, chats, monsize, free),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -2442,7 +2442,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         monsize = get_size(monsize)
         free = get_size(free)
         await query.message.edit_text(
-            text=script.STATUS_TXT.format(total, users, chats, monsize, free),
+            text=script.STATUS_TXT.format(total, users, premium, chats, monsize, free),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -2606,7 +2606,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.JSON_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
-)
+        )
     elif query.data == "sticker":
             btn = [[
                     InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="help"),
@@ -2623,6 +2623,90 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML
             )
+    elif query.data == "unmute_all_members":
+        if not await is_check_admin(client, query.message.chat.id, query.from_user.id):
+            await query.answer("This Is Not For You!", show_alert=True)
+            return
+        users_id = []
+        await query.message.edit("Unmute all started! This process maybe get some time...")
+        try:
+            async for member in client.get_chat_members(query.message.chat.id, filter=enums.ChatMembersFilter.RESTRICTED):
+                users_id.append(member.user.id)
+            for user_id in users_id:
+                await client.unban_chat_member(query.message.chat.id, user_id)
+        except Exception as e:
+            await query.message.delete()
+            await query.message.reply(f'Something went wrong.\n\n<code>{e}</code>')
+            return
+        await query.message.delete()
+        if users_id:
+            await query.message.reply(f"Successfully unmuted <code>{len(users_id)}</code> users.")
+        else:
+            await query.message.reply('Nothing to unmute users.')
+
+    elif query.data == "unban_all_members":
+        if not await is_check_admin(client, query.message.chat.id, query.from_user.id):
+            await query.answer("This Is Not For You!", show_alert=True)
+            return
+        users_id = []
+        await query.message.edit("Unban all started! This process maybe get some time...")
+        try:
+            async for member in client.get_chat_members(query.message.chat.id, filter=enums.ChatMembersFilter.BANNED):
+                users_id.append(member.user.id)
+            for user_id in users_id:
+                await client.unban_chat_member(query.message.chat.id, user_id)
+        except Exception as e:
+            await query.message.delete()
+            await query.message.reply(f'Something went wrong.\n\n<code>{e}</code>')
+            return
+        await query.message.delete()
+        if users_id:
+            await query.message.reply(f"Successfully unban <code>{len(users_id)}</code> users.")
+        else:
+            await query.message.reply('Nothing to unban users.')
+
+    elif query.data == "kick_muted_members":
+        if not await is_check_admin(client, query.message.chat.id, query.from_user.id):
+            await query.answer("This Is Not For You!", show_alert=True)
+            return
+        users_id = []
+        await query.message.edit("Kick muted users started! This process maybe get some time...")
+        try:
+            async for member in client.get_chat_members(query.message.chat.id, filter=enums.ChatMembersFilter.RESTRICTED):
+                users_id.append(member.user.id)
+            for user_id in users_id:
+                await client.ban_chat_member(query.message.chat.id, user_id, datetime.now() + timedelta(seconds=30))
+        except Exception as e:
+            await query.message.delete()
+            await query.message.reply(f'Something went wrong.\n\n<code>{e}</code>')
+            return
+        await query.message.delete()
+        if users_id:
+            await query.message.reply(f"Successfully kicked muted <code>{len(users_id)}</code> users.")
+        else:
+            await query.message.reply('Nothing to kick muted users.')
+
+    elif query.data == "kick_deleted_accounts_members":
+        if not await is_check_admin(client, query.message.chat.id, query.from_user.id):
+            await query.answer("This Is Not For You!", show_alert=True)
+            return
+        users_id = []
+        await query.message.edit("Kick deleted accounts started! This process maybe get some time...")
+        try:
+            async for member in client.get_chat_members(query.message.chat.id):
+                if member.user.is_deleted:
+                    users_id.append(member.user.id)
+            for user_id in users_id:
+                await client.ban_chat_member(query.message.chat.id, user_id, datetime.now() + timedelta(seconds=30))
+        except Exception as e:
+            await query.message.delete()
+            await query.message.reply(f'Something went wrong.\n\n<code>{e}</code>')
+            return
+        await query.message.delete()
+        if users_id:
+            await query.message.reply(f"Successfully kicked deleted <code>{len(users_id)}</code> accounts.")
+        else:
+            await query.message.reply('Nothing to kick deleted accounts.')
     elif query.data == "tamil_info":
             btn = [[
                     InlineKeyboardButton("⟸ Bᴀᴄᴋ", callback_data="start"),
