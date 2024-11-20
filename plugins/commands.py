@@ -1458,6 +1458,8 @@ async def give_premium_cmd_handler(client, message):
                 chat_id=user_id,
                 text=f"<b>ᴘʀᴇᴍɪᴜᴍ ᴀᴅᴅᴇᴅ ᴛᴏ ʏᴏᴜʀ ᴀᴄᴄᴏᴜɴᴛ ꜰᴏʀ {time} ᴇɴᴊᴏʏ 😀\n</b>",                
             )
+            await client.send_message(LOG_CHANNEL, text=f"#Added_Premium\n\n👤 User - {user.mention}\n\n🪙 Id - <code>{user_id}</code>\n\n⏰ Premium access - {time}\n\n🎩 Joining - {current_time}\n\n⌛️ Expiry - {expiry_str_in_ist}\n\n{custom_message}", disable_web_page_preview=True)
+
         else:
             await message.reply_text("Invalid time format. Please use '1day for days', '1hour for hours', or '1min for minutes', or '1month for months' or '1year for year'")
     else:
@@ -1525,3 +1527,41 @@ async def check_plans_cmd(client, message):
         await message.reply_text(f"**😢 You Don't Have Any Premium Subscription.\n\n Check Out Our Premium /plan**",reply_markup=reply_markup)
         await asyncio.sleep(2)
         await m.delete()
+
+@Client.on_message(filters.command("premiumusers") & filters.user(ADMINS))
+async def premium_user(client, message):
+    aa = await message.reply_text("Fetching ...")  
+    users = await db.all_premium_users()
+    users_list = []
+    async for user in users:
+        users_list.append(user)    
+    user_data = {user['id']: await db.get_user(user['id']) for user in users_list}    
+    new_users = []
+    for user in users_list:
+        user_id = user['id']
+        data = user_data.get(user_id)
+        expiry = data.get("expiry_time") if data else None        
+        if expiry:
+            expiry_ist = expiry.astimezone(pytz.timezone("Asia/Kolkata"))
+            expiry_str_in_ist = expiry_ist.strftime("%d-%m-%Y %I:%M:%S %p")          
+            current_time = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
+            time_left = expiry_ist - current_time
+            days, remainder = divmod(time_left.total_seconds(), 86400)
+            hours, remainder = divmod(remainder, 3600)
+            minutes, _ = divmod(remainder, 60)            
+            time_left_str = f"{int(days)} days, {int(hours)} hours, {int(minutes)} minutes"            
+            user_info = await client.get_users(user_id)
+            user_str = (
+                f"{len(new_users) + 1}. User ID: {user_id}\n"
+                f"Name: {user_info.mention}\n"
+                f"Expiry Date: {expiry_str_in_ist}\n"
+                f"Expiry Time: {time_left_str}\n\n"
+            )
+            new_users.append(user_str)
+    new = "Paid Users - \n\n" + "\n".join(new_users)   
+    try:
+        await aa.edit_text(new)
+    except MessageTooLong:
+        with open('premiumuser.txt', 'w+') as outfile:
+            outfile.write(new)
+        await message.reply_document('premiumuser.txt', caption="Paid Users:")
