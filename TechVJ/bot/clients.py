@@ -11,7 +11,7 @@ from TechVJ.bot import multi_clients, work_loads, TamilBot
 
 
 async def initialize_clients():
-    multi_clients[0] = TechVJBot
+    multi_clients[0] = TamilBot
     work_loads[0] = 0
     all_tokens = TokenParser().parse_from_env()
     if not all_tokens:
