@@ -1,3 +1,7 @@
+# Don't Remove Credit @TamilBots
+# Subscribe YouTube Channel For Amazing Bot @Tamilbots
+# Ask Doubt on telegram @TamilSupport
+
 from pyrogram import filters,Client
 from info import LOG_CHANNEL as LOG_GROUP, REQST_CHANNEL as DUMP_GROUP
 import os,re,asyncio,bs4
@@ -52,5 +56,5 @@ async def twitter_handler(Client, message):
           if "dump_file" in locals():
              await dump_file.copy(DUMP_GROUP)
        await m.delete()
-       await message.reply("Check out @TgMovieProBot(music)  @TamilBots(Channel) \n Please Support Us By /donate To Maintain This Project")               
+       await message.reply("Check out @TamilMovies5k (music)  @TamilBots(Channel) \n Please Support Us By /donate To Maintain This Project")               
                   
