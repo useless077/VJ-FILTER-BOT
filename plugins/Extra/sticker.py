@@ -1,3 +1,8 @@
+# Don't Remove Credit @TamilBots
+# Subscribe YouTube Channel For Amazing Bot @Tamilbots
+# Ask Doubt on telegram @TamilSupport
+
+
 from pyrogram import Client, filters
 
 @Client.on_message(filters.command("stickerid") & filters.private)
