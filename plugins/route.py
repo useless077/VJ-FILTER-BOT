@@ -10,7 +10,7 @@ import secrets
 import time
 import mimetypes
 from aiohttp.http_exceptions import BadStatusLine
-from TechVJ.bot import multi_clients, work_loads, TechVJBot
+from TechVJ.bot import multi_clients, work_loads, TamilBot
 from TechVJ.server.exceptions import FIleNotFound, InvalidHash
 from TechVJ import StartTime, __version__
 from TechVJ.util.custom_dl import ByteStreamer
