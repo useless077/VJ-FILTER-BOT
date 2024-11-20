@@ -1,3 +1,8 @@
+# Don't Remove Credit @TamilBots
+# Subscribe YouTube Channel For Amazing Bot @Tamilbots
+# Ask Doubt on telegram @TamilSupport
+
+
 from pyrogram import filters, Client
 import bs4, requests, re, asyncio
 import os, traceback, random
