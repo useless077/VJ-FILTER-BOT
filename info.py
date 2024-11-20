@@ -1,6 +1,6 @@
-# Don't Remove Credit @VJ_Botz @TamilBots
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Don't Remove Credit @tamilBots
+# Subscribe YouTube Channel For Amazing Bot @TamilBots
+# Ask Doubt on telegram @TamilSupport
 # tamil movies5k id -1001980408095
 #Townbus id -1001675270280
 
