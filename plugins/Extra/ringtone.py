@@ -1,3 +1,8 @@
+# Don't Remove Credit @TamilBots
+# Subscribe YouTube Channel For Amazing Bot @Tamilbots
+# Ask Doubt on telegram @TamilSupport
+
+
 import os
 import logging
 from pyrogram import Client, filters, enums
