@@ -1,3 +1,7 @@
+# Don't Remove Credit @TamilBOts
+# Subscribe YouTube Channel For Amazing Bot @Tamilbots
+# Ask Doubt on telegram @TamilSupport
+
 import pyrogram
 from pyrogram import Client, filters
 
