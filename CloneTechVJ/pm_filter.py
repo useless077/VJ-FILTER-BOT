@@ -85,10 +85,10 @@ async def next_page(bot, query):
     btn = [
         [
             InlineKeyboardButton(
-                text=f"⚡[{get_size(filesk.file_size)}]⚡ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filesk.file_name.split()))}", callback_data=f'file#{filesk.file_id}'
+                text=f"⚡[{get_size(file.file_size)}]⚡ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'file#{file.file_id}'
             ),
         ]
-        for filesk in files
+        for file in files
     ]
 
     btn.insert(0, 
@@ -235,10 +235,10 @@ async def filter_yearss_cb_handler(client: Client, query: CallbackQuery):
     btn = [
         [
             InlineKeyboardButton(
-                text=f"⚡[{get_size(filesk.file_size)}]⚡ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filesk.file_name.split()))}", callback_data=f'file#{filesk.file_id}'
+                text=f"⚡[{get_size(file.file_size)}]⚡ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'file#{file.file_id}'
             ),
         ]
-        for filesk in files
+        for file in files
     ]
     btn.insert(0, 
         [
@@ -347,10 +347,10 @@ async def filter_episodes_cb_handler(client: Client, query: CallbackQuery):
     btn = [
         [
             InlineKeyboardButton(
-                text=f"⚡[{get_size(filesk.file_size)}]⚡ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filesk.file_name.split()))}", callback_data=f'file#{filesk.file_id}'
+                text=f"⚡[{get_size(file.file_size)}]⚡ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'file#{file.file_id}'
             ),
         ]
-        for filesk in files
+        for file in files
     ]
     btn.insert(0, 
         [
@@ -461,10 +461,10 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     btn = [
         [
             InlineKeyboardButton(
-                text=f"⚡[{get_size(filesk.file_size)}]⚡ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filesk.file_name.split()))}", callback_data=f'file#{filesk.file_id}'
+                text=f"⚡[{get_size(file.file_size)}]⚡ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'file#{file.file_id}'
             ),
         ]
-        for filesk in files
+        for file in files
     ]
     btn.insert(0, 
         [
@@ -602,10 +602,10 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
     btn = [
         [
             InlineKeyboardButton(
-                text=f"⚡[{get_size(filesk.file_size)}]⚡ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filesk.file_name.split()))}", callback_data=f'file#{filesk.file_id}'
+                text=f"⚡[{get_size(file.file_size)}]⚡ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'file#{file.file_id}'
             ),
         ]
-        for filesk in files
+        for file in files
     ]
     btn.insert(0, 
         [
@@ -710,10 +710,10 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
     btn = [
         [
             InlineKeyboardButton(
-                text=f"⚡[{get_size(filesk.file_size)}]⚡ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filesk.file_name.split()))}", callback_data=f'file#{filesk.file_id}'
+                text=f"⚡[{get_size(file.file_size)}]⚡ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'file#{file.file_id}'
             ),
         ]
-        for filesk in files
+        for file in files
     ] 
     btn.insert(0, 
         [
@@ -915,10 +915,10 @@ async def auto_filter(client, name, msg, reply_msg, ai_search, spoll=False):
     btn = [
         [
             InlineKeyboardButton(
-                text=f"⚡[{get_size(filesk.file_size)}]⚡ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), filesk.file_name.split()))}", callback_data=f'file#{filesk.file_id}'
+                text=f"⚡[{get_size(file.file_size)}]⚡ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'file#{file.file_id}'
             ),
         ]
-        for filesk in files
+        for file in files
     ]
     btn.insert(0, 
         [
@@ -1010,7 +1010,7 @@ async def auto_filter(client, name, msg, reply_msg, ai_search, spoll=False):
         await fuk.delete()
         await message.delete()
 
-async def advantage_spell_chok(client, name, msg, reply_msg, sk_search):
+async def advantage_spell_chok(client, name, msg, reply_msg, vj_search):
     mv_id = msg.id
     mv_rqst = name
     reqstr1 = msg.from_user.id if msg.from_user else 0
@@ -1044,18 +1044,18 @@ async def advantage_spell_chok(client, name, msg, reply_msg, sk_search):
     movielist += [movie.get('title') for movie in movies]
     movielist += [f"{movie.get('title')} {movie.get('year')}" for movie in movies]
     SPELL_CHECK[mv_id] = movielist
-    if sk_search == True:
-        sk_search_new = False
-        sk_ai_msg = await reply_msg.edit_text("<b><i>Advance Ai Of TamilBots Try To Find Your Movie With Your Wrong Spelling.</i></b>")
+    if vj_search == True:
+        vj_search_new = False
+        vj_ai_msg = await reply_msg.edit_text("<b><i>Advance Ai Of TamilBots Try To Find Your Movie With Your Wrong Spelling.</i></b>")
         movienamelist = []
         movienamelist += [movie.get('title') for movie in movies]
-        for techsk in movienamelist:
+        for techvj in movienamelist:
             try:
                 mv_rqst = mv_rqst.capitalize()
             except:
                 pass
-            if mv_rqst.startswith(techsk[0]):
-                await auto_filter(client, techsk, msg, reply_msg, sk_search_new)
+            if mv_rqst.startswith(techvj[0]):
+                await auto_filter(client, techvj, msg, reply_msg, vj_search_new)
                 break
         reqst_gle = mv_rqst.replace(" ", "+")
         button = [[
