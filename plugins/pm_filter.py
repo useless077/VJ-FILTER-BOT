@@ -1,6 +1,6 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @YaarulaNee
+# Don't Remove Credit @TamilBots
+# Subscribe YouTube Channel For Amazing Bot @Tamilbots
+# Ask Doubt on telegram @TamilSupport
 
 import os, logging, string, asyncio, time, re, ast, random, math, pytz, pyrogram
 from datetime import datetime, timedelta, date, time
