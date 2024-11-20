@@ -1,4 +1,6 @@
-# This is a simple code from MrTG brain 🧠.
+# Don't Remove Credit @TamilBOts
+# Subscribe YouTube Channel For Amazing Bot @Tamilbots
+# Ask Doubt on telegram @TamilSupport
 # sending method for users, eg:- /send hi.
 # reply method for admins only, eg:- !ans 2674364 hello 
 # In reply method !ans is command, {user_id} of user id, {ur_message} your meessage for reply to use and you can send message to required group through the bot.
