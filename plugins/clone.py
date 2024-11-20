@@ -31,13 +31,13 @@ async def clone_menu(client, message):
     user_id = message.from_user.id
     msg = await message.reply_text("**👨‍💻 ᴡᴀɪᴛ ᴀ ᴍɪɴᴜᴛᴇ ɪ ᴀᴍ ᴄʀᴇᴀᴛɪɴɢ ʏᴏᴜʀ ʙᴏᴛ ❣️**")
     try:
-        vj = Client(
+        tn = Client(
             f"{bot_token}", API_ID, API_HASH,
             bot_token=bot_token,
             plugins={"root": "CloneTechVJ"}
         )
-        await vj.start()
-        bot = await vj.get_me()
+        await tn.start()
+        bot = await tn.get_me()
         await db.add_clone_bot(bot.id, user_id, bot_token)
         await msg.edit_text(f"<b>sᴜᴄᴄᴇssғᴜʟʟʏ ᴄʟᴏɴᴇᴅ ʏᴏᴜʀ ʙᴏᴛ: @{bot.username}.\n\nʏᴏᴜ ᴄᴀɴ ᴄᴜsᴛᴏᴍɪsᴇ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ ʙʏ /settings ᴄᴏᴍᴍᴀɴᴅ ɪɴ ʏᴏᴜʀ ᴄʟᴏɴᴇ ʙᴏᴛ</b>")
     except BaseException as e:
@@ -57,12 +57,12 @@ async def restart_bots():
     for bot in bots:
         bot_token = bot['bot_token']
         try:
-            vj = Client(
+            tn = Client(
                 f"{bot_token}", API_ID, API_HASH,
                 bot_token=bot_token,
                 plugins={"root": "CloneTechVJ"},
             )
-            await vj.start()
+            await tn.start()
         except Exception as e:
             print(f"Error while restarting bot with token {bot_token}: {e}")
         
