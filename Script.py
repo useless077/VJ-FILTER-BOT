@@ -1,6 +1,6 @@
 ## Don't Remove Credit @tamilBots
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
+# Subscribe YouTube Channel For Amazing Bot @TamilBots
+# Ask Doubt on telegram @TamilSupport
 
 
 class script(object):
