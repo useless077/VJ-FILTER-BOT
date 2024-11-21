@@ -1503,7 +1503,7 @@ async def refer_cmd_handler(client, message):
     ]
     reply_markup = InlineKeyboardMarkup(btn)
     await message.reply_text(
-        text=script.SUBSCRIPTION_TXT.format(REFERAL_PREMEIUM_TIME, temp.U_NAME, query.from_user.id, REFERAL_COUNT),
+        script.SUBSCRIPTION_TXT.format(REFERAL_PREMEIUM_TIME, temp.U_NAME, query.from_user.id, REFERAL_COUNT),
         reply_markup=reply_markup,
         parse_mode=enums.ParseMode.HTML
     )
