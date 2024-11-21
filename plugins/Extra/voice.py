@@ -2,11 +2,10 @@
 # Subscribe YouTube Channel For Amazing Bot @Tamilbots
 # Ask Doubt on telegram @TamilSupport
 
-
 import requests
 from pyrogram import Client, filters, types
 
-PLAY_HT_API_KEY = "3q5ZzebQQ1NbzDMRzzNmTcQ4eV63"
+PLAY_HT_API_KEY = "fa6eedac479c413b97fe45c43a146c46"
 PLAY_HT_USER_ID = "JWjv1QBluMRol63S1y3oi0PbngA2"
 
 # Define the endpoint URL
