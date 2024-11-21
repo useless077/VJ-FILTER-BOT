@@ -72,15 +72,15 @@ async def cb_voice(_, query):
         user_id = int(user_id)
     except ValueError:
         return await query.answer('Invalid data format.')
-​
+
     if query.from_user.id != user_id:
         return await query.answer('You cannot access other requests.')
-​
+
     text = query.message.text.split('➲')[0].strip()
     voice_url = voices.get(voice_name)
     if not voice_url:
         return await query.message.edit(f"Invalid voice: {voice_name}")
-​
+
     payload = {
         "text": text,
         "voice": voice_url,
@@ -92,7 +92,7 @@ async def cb_voice(_, query):
 
     try:
         await query.message.edit(f"**Generating {voice_name} voice ❤️.**")
-        
+
         response = requests.post(url, headers=headers, json=payload, timeout=60)
         response.raise_for_status()
 
