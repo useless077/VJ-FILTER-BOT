@@ -76,10 +76,10 @@ def a(client, message):
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
             secmul *= 60
-        xy = await message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name)
+        s=await message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name)
         await m.delete()
         await asyncio.sleep(300)
-        await xy.delete()
+        await s.delete()
     except Exception as e:
         m.edit('❌ 𝐄𝐫𝐫𝐨𝐫')
         print(e)
