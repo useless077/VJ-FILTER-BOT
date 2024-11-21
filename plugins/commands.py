@@ -1376,6 +1376,7 @@ async def stop_button(bot, message):
     await msg.edit("**✅️ 𝙱𝙾𝚃 𝙸𝚂 𝚁𝙴𝚂𝚃𝙰𝚁𝚃𝙴𝙳. 𝙽𝙾𝚆 𝚈𝙾𝚄 𝙲𝙰𝙽 𝚄𝚂𝙴 𝙼𝙴**")
     os.execl(sys.executable, sys.executable, *sys.argv)
 
+
 @Client.on_message(filters.command("nofsub") & filters.user(ADMINS))
 async def nofsub(client, message):
     userid = message.from_user.id if message.from_user else None
@@ -1491,7 +1492,22 @@ async def remove_premium_cmd_handler(client, message):
             await message.reply_text("Invalid time format.'")
     else:
         await message.reply_text("Usage: /remove_premium user_id")
-        
+
+
+@Client.on_message(filters.command("refer"))
+    if PREMIUM_AND_REFERAL_MODE == False:
+        return 
+    btn = [            
+        [InlineKeyboardButton('🤩 ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url=CHNL_LNK)],
+        [InlineKeyboardButton('🎭 Mᴏᴠɪᴇ Gʀᴏᴜᴘ', url=GRP_LNK)]
+    ]
+    reply_markup = InlineKeyboardMarkup(btn)
+    await message.reply_text(
+        text=script.SUBSCRIPTION_TXT.format(REFERAL_PREMEIUM_TIME, temp.U_NAME, query.from_user.id, REFERAL_COUNT),
+        reply_markup=reply_markup,
+        parse_mode=enums.ParseMode.HTML
+    )
+
 @Client.on_message(filters.command("plan"))
 async def plans_cmd_handler(client, message): 
     if PREMIUM_AND_REFERAL_MODE == False:
@@ -1502,7 +1518,7 @@ async def plans_cmd_handler(client, message):
     ]
     reply_markup = InlineKeyboardMarkup(btn)
     await message.reply_photo(
-        photo=PAYMENT_QR,
+        photo=PAYMENT_QR,        
         caption=PAYMENT_TEXT,
         reply_markup=reply_markup
     )
