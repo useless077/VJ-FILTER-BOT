@@ -6,15 +6,14 @@
 import requests
 from pyrogram import Client, filters, types
 
-​
 PLAY_HT_API_KEY = "3q5ZzebQQ1NbzDMRzzNmTcQ4eV63"
 PLAY_HT_USER_ID = "JWjv1QBluMRol63S1y3oi0PbngA2"
-​
+
 # Define the endpoint URL
 url = "https://api.play.ht/api/v2/tts/stream"
-​
+
 temp = []
-​
+
 # Define the request headers
 headers = {
     "AUTHORIZATION": PLAY_HT_API_KEY,
@@ -22,7 +21,7 @@ headers = {
     "accept": "audio/mpeg",
     "content-type": "application/json"
 }
-​
+
 # Define the voice data
 voices = {
     'benton': 's3://voice-cloning-zero-shot/b41d1a8c-2c99-4403-8262-5808bc67c3e0/bentonsaad/manifest.json',
@@ -35,8 +34,8 @@ voices = {
     'amelia': 's3://voice-cloning-zero-shot/34eaa933-62cb-4e32-adb8-c1723ef85097/original/manifest.json',
     'aurther': 's3://voice-cloning-zero-shot/509221d8-9e2d-486c-9b3c-97e52d86e63d/arthuradvertisingsaad/manifest.json'
 }
-​
-@bot.on_message(filters.command('voice'))
+
+@Client.on_message(filters.command('voice'))
 async def voice(_, message):
     Usage = "Reply to a message with the text you want to convert to voice."
     user_id = message.from_user.id
@@ -48,7 +47,7 @@ async def voice(_, message):
             )
         else:
             temp.append(user_id)
-                
+
     reply = message.reply_to_message
     if reply and reply.text:
         try:
@@ -66,8 +65,8 @@ async def voice(_, message):
             await message.reply_text(str(e))
     else:
         await message.reply_text(Usage)
-​
-@bot.on_callback_query(filters.regex('^voice'))
+
+@Client.on_callback_query(filters.regex('^voice'))
 async def cb_voice(_, query):
     try:
         user_id, voice_name = query.data.split(":")[1:]
@@ -91,19 +90,19 @@ async def cb_voice(_, query):
         "sample_rate": 44100,
         "voice_engine": "PlayHT2.0-turbo"
     }
-​
+
     try:
         await query.message.edit(f"**Generating {voice_name} voice ❤️.**")
-​
+        
         response = requests.post(url, headers=headers, json=payload, timeout=60)
         response.raise_for_status()
-​
+
         chat_id = query.message.chat.id
         path = f'{user_id}{chat_id}_voice.mp3'
         with open(path, 'wb') as f:
             f.write(response.content)
-​
-        await bot.send_audio(
+
+        await Client.send_audio(
             chat_id=chat_id,
             audio=path,
             caption=f'**Requested by {query.from_user.mention}**',
