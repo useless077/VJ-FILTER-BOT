@@ -52,8 +52,8 @@ ADMIN_GROUP_ID = int(environ.get('ADMIN_GROUP_ID', '-1002102220397'))
 
 #Redirect to Channel
 #Must change this link to work redirect (FILE_FORWORD)
-FILE_FORWARD = environ.get('FILE_FORWARD',"tamil5k")
-FILE_CHANNEL = int(environ.get('FILE_CHANNEL', 0))
+FILE_FORWARD = environ.get('FILE_FORWARD', "tamil5k")
+FILE_CHANNEL = int(environ.get('FILE_CHANNEL', "tamil5k"))
 
 # MongoDB information
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://tamilmovie:tamilmovie@cluster0.lxatf.mongodb.net/tamilmovie?retryWrites=true&w=majority")
