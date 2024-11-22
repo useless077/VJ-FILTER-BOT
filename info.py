@@ -107,9 +107,9 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 # Shortlink Info
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'tnshort.net')
 SHORTLINK_API = environ.get('SHORTLINK_API', 'eb0d3ac51fe147d90318fd1a3b2a9446a57bdf96')
-SHORTLINK_MODE = bool(environ.get('SHORTLINK_MODE', False))
-IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
-VERIFY = bool(environ.get('VERIFY', True))
+SHORTLINK_MODE = bool(environ.get('SHORTLINK_MODE', True))
+IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
+VERIFY = bool(environ.get('VERIFY', False))
 
 # Others
 MAX_B_TN = environ.get("MAX_B_TN", "5")
@@ -148,14 +148,14 @@ if 'DYNO' in environ:
     ON_HEROKU = True
 else:
     ON_HEROKU = False
-URL = environ.get("URL", "https://townbus-tamilbots.koyeb.app/")
+URL = environ.get("URL", "https://townbus.koyeb.app/")
 
 
 # Rename Info ; If True Then Bot Rename File Else Not
 RENAME_MODE = bool(environ.get('RENAME_MODE', True)) # Set True or Flase
 
 # Save Restricted Info : If True Then Bot Save Content From Restricted Channel Else Not
-SAVE_RESTRICTED_MODE = bool(environ.get('SAVE_RESTRICTED_MODE', False)) # Set True or False
+SAVE_RESTRICTED_MODE = bool(environ.get('SAVE_RESTRICTED_MODE', True)) # Set True or False
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
 LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")
