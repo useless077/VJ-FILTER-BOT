@@ -21,7 +21,7 @@ def time_to_seconds(time):
 
 ## Commands --------------------------------
 
-@Client.on_message(filters.command(['s']) & filters.private))
+@Client.on_message(filters.command(['s']))
 async def audio(client, message):
     query = ''
     for i in message.command[1:]:
