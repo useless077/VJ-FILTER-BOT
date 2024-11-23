@@ -58,7 +58,7 @@ FILE_CHANNEL = int(environ.get('FILE_CHANNEL', "tamil5k"))
 # MongoDB information
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://tamilmovie:tamilmovie@cluster0.lxatf.mongodb.net/tamilmovie?retryWrites=true&w=majority")
 DATABASE_NAME = environ.get('DATABASE_NAME', "TamilBots")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Tamil_files')
 
 # Premium And Referal Settings
 PREMIUM_AND_REFERAL_MODE = bool(environ.get('PREMIUM_AND_REFERAL_MODE', True)) # Set Ture Or False
